@@ -9,7 +9,6 @@ def plot_route_map(coord_dict,graph_obj,start_point,end_point):
 
     graph_dict = {node: dict(graph_obj.graph[node]) for node in graph_obj.graph}
 
-
     # Calculate Dijkstra path and distance
     dijkstra_path, _ = dijkstra(graph_obj, start_point, end_point)
 
