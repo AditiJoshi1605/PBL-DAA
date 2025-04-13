@@ -1,17 +1,17 @@
 ,name,Latitude,Longitude
 0,clock tower,30.3243226,78.0418634
-1,darshanlal chowk,,
+1,darshan lal chowk,30.3227858,78.0426243795151
 2,saharanpur chowk,,
 3,isbt dehradun,30.28790565,77.99803327072325
 4,graphic era hill university,30.27279465,78.0006110061085
-5,asley hall,,
+5,astley hall,,
 6,matawala bagh,,
 7,daudwala,,
 8,mathurawala,,
 9,vishnupuram,,
 10,bangali kothi,,
 11,kargi chowk,30.288367100000002,78.02393887554946
-12,ranipokhri,30.1836083,78.215349
+12,rani pokhri,30.1836083,78.215349
 13,doiwala,30.176359,78.1246442
 14,lachiwala,30.1925703,78.124962
 15,kuanwala,,
@@ -26,20 +26,20 @@
 24,6 no. pulia,,
 25,ring road,30.310160519738947,78.07660775872858
 26,post office nehru gram,,
-27,graphic era hill university/gehu,,
+27,graphic era hill university (gehu),,
 28,hathibadkala,,
-29,garhi cant,,
-30,vijay coloney,,
+29,garhi cantt,30.3517882,78.02930926330063
+30,vijay colony,30.340944550000003,78.04614705204878
 31,chir bagh,,
 32,cm house,,
 33,ongc chowk,,
 34,ballupur chowk,,
-35,gms road,30.325013600895485,78.01290208563202
+35,gms road,30.306966784730985,78.00924051644755
 36,rajender nagar,,
-37,yamuna coloney,,
+37,yamuna colony,,
 38,bindal pul,,
 39,kishan nagar,,
-40,blood bank,30.319113,78.0422025
+40,blood bank,30.3342247,78.0177194
 41,supply,30.381709141446823,78.070023463992
 42,it park dehradun,30.36162105,78.0853448037893
 43,nala paani chowk,,
@@ -56,7 +56,7 @@
 54,mehuwala,30.311503,77.982168
 55,race course,,
 56,dharampur,,
-57,mata mandir,30.3820718,78.0726008
+57,mata mandir,30.405284,78.0828955
 58,balbir road,30.307733050990624,78.05350800550605
 59,rajpur,30.3819398,78.0887349
 60,great value,,
@@ -66,7 +66,7 @@
 64,dwarka store,,
 65,araghar,,
 66,kulhal,30.42874205,77.62963175482557
-67,vikasnagar,30.3881655,77.84861616599443
+67,vikas nagar,,
 68,tehsil,30.320719250000003,78.04107251016853
 69,harbatpur chowk,,
 70,langa road,,
@@ -84,4 +84,4 @@
 82,bansiwala,30.345736,77.8968789
 83,manduwala,,
 84,prem nagar,,
-85,balliwalachowk,,
+85,balliwala chowk,,
