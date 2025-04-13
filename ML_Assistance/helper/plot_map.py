@@ -5,13 +5,13 @@ from helper.load_coordinates import load_coordinates
 from helper.create_graph_from_csv import create_graph_from_csv
 from helper.calculate_shortest_path import dijkstra
 
-def plo_route_map(coord_dict,graph_obj,start_point,end_point):
+def plot_route_map(coord_dict,graph_obj,start_point,end_point):
 
     graph_dict = {node: dict(graph_obj.graph[node]) for node in graph_obj.graph}
 
 
     # Calculate Dijkstra path and distance
-    dijkstra_path, _ = dijkstra(graph_dict, start_point, end_point)
+    dijkstra_path, _ = dijkstra(graph_obj, start_point, end_point)
 
     # Center map on the starting point or fallback
     start_coords = coord_dict.get(dijkstra_path[0], {'Latitude': 30.3165, 'Longitude': 78.0322})
@@ -41,4 +41,4 @@ def plo_route_map(coord_dict,graph_obj,start_point,end_point):
             ).add_to(m)
 
     # Display the map
-    m
+    return m
