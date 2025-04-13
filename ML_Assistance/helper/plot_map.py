@@ -19,6 +19,7 @@ def plo_route_map(coord_dict,graph_obj,start_point,end_point):
     # Initialize map
     m = folium.Map(location=[start_coords['Latitude'], start_coords['Longitude']], zoom_start=12)
 
+    '''------------------------------------------------Design-----------------------------------------------------'''
     # Plot path on the map
     path_coords = [
         (coord_dict.get(stop, {}).get("Latitude"), coord_dict.get(stop, {}).get("Longitude"))
