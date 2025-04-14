@@ -1,7 +1,7 @@
 
 import folium
 import pandas as pd
-df_loc = pd.read_csv('../assets/location_coordinates_final.csv')
+df_loc = pd.read_csv(r'C:\Users\aksha\IdeaProjects\DAA_PBL\PBL-DAA\assets\location_coordinates_final.csv')
 df_loc = df_loc.dropna(subset=['Latitude','Longitude']) 
 def mapper(x):
     if(x):
