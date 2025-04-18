@@ -3,6 +3,7 @@ from Util_Functions.load_coordinates import load_coordinates
 from Util_Functions.calculate_shortest_path import dijkstra, get_path_weight
 from Util_Functions.stop_to_destination_all_routes import find_all_routes
 from Util_Functions.plot_map import plot_route_map
+from Util_Functions.Multi_Source_Djiktras import multi_source_dijkstra,reconstruct_path
 import os
 def display_graph(graph_obj):
     for node, edges in graph_obj.graph.items():
@@ -28,17 +29,32 @@ def main():
     coord_dict = load_coordinates(coord_file)
     print(f"Available stops in the graph: {list(graph_obj.graph.keys())}")
     # User input
-    start_point = input("Enter pickup point: ").strip().lower()
+    #start_point = input("Enter pickup point: ").strip().lower()
     end_point = input("Enter drop point: ").strip().lower()
     # Validate input
-    if start_point not in graph_obj.graph:
-        print(f"Pickup point '{start_point}' not found in graph.")
-        return
+    #if start_point not in graph_obj.graph:
+    #    print(f"Pickup point '{start_point}' not found in graph.")
+    #   return
     if end_point not in graph_obj.graph:
         print(f"Drop point '{end_point}' not found in graph.")
         return
     # Shortest path using Dijkstra
-    print("\nShortest path using Dijkstra:")
-    print(dijkstra(graph_obj, start_point, end_point))
+    #print("\nShortest path using Dijkstra:")
+    #print(dijkstra(graph_obj, start_point, end_point))
+    #Updates
+    # User input for sources
+    sources = input("Enter pickup points (comma-separated): ").strip().lower().split(',')
+    sources = [source.strip() for source in sources] # Remove any leading/trailing whitespace from inputs
+    # Validate input
+    for source in sources:
+        if source not in graph_obj.graph:
+            print(f"Pickup point '{source}' not found in graph.")
+            return
+    dis,prev=multi_source_dijkstra(graph_obj,sources)
+    path=reconstruct_path(graph_obj,prev,end_point)
+    # Print prev (path reconstruction info) and distance to end_point
+    print(f"Prev (Previous node information): {prev}")
+    print(f"Shortest Distance to '{end_point}': {dis[end_point]}")
+    print(f"Path: {path}")
 if __name__ == "__main__":
     main()
