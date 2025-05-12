@@ -74,7 +74,13 @@
             alert("🚨 Emergency Alert Sent to All Buses!");
             // TODO: Trigger server-side SocketIO or API call here
         }
+        document.addEventListener("mousemove", (e) => {
+            const moveX = (e.clientX / window.innerWidth - 0.5) * 10;
+            const moveY = (e.clientY / window.innerHeight - 0.5) * 10;
+            document.body.style.transform = `translate(${moveX}px, ${moveY}px)`;
+        });
     </script>
+
 
 </body>
 </html>

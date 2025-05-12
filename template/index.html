@@ -18,5 +18,13 @@
             <img src="{{ url_for('static', filename='images/bus_map.png') }}" alt="Bus Map" class="img-fluid" style="max-height: 400px;">
         </div>
     </div>
+    <script>
+        document.addEventListener("mousemove", (e) => {
+            const moveX = (e.clientX / window.innerWidth - 0.5) * 10;
+            const moveY = (e.clientY / window.innerHeight - 0.5) * 10;
+            document.body.style.transform = `translate(${moveX}px, ${moveY}px)`;
+        });
+    </script>
+
 </body>
 </html>

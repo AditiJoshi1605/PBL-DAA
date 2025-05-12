@@ -61,7 +61,14 @@
         marker.bindPopup(`<b>Nearest Stop</b><br>${data.stop}`).openPopup();
         map.setView([data.lat, data.lng], 15);
     });
+
+    document.addEventListener("mousemove", (e) => {
+        const moveX = (e.clientX / window.innerWidth - 0.5) * 10;
+        const moveY = (e.clientY / window.innerHeight - 0.5) * 10;
+        document.body.style.transform = `translate(${moveX}px, ${moveY}px)`;
+    });
 </script>
+
 
 </body>
 </html>
