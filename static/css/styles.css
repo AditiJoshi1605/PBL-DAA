@@ -1,92 +1,122 @@
-/* General Styles */
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+/* Reset + Base styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    height: 100%;
+    overflow-x: hidden;
+    background: #0f2027;  /* fallback for old browsers */
+    background: linear-gradient(to right, #2c5364, #203a43, #0f2027);
+    color: #f0f0f0;
+}
+
+/* Animated live background */
+body::before {
+    content: "";
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.03) 10%, transparent 10.01%);
+    background-size: 20px 20px;
+    animation: animateBG 20s linear infinite;
+    z-index: -1;
+    pointer-events: none;
+}
+
+@keyframes animateBG {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Parallax mouse movement effect */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f5f8fa;
-    color: #333;
+    perspective: 1px;
+    transform-style: preserve-3d;
 }
 
-h1, h2, h4 {
-    color: #2c3e50;
-}
-
+/* Containers */
 .container {
-    max-width: 1200px;
-    margin: auto;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
-/* Buttons */
-.btn-primary {
-    background-color: #007bff;
-    border-color: #007bff;
-    transition: background-color 0.3s ease;
+/* Headings */
+h1, h2 {
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
 }
 
-.btn-primary:hover {
-    background-color: #0056b3;
+/* Form styling */
+form {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.4);
+    margin-bottom: 30px;
 }
 
-.btn-secondary {
-    background-color: #6c757d;
-    border-color: #6c757d;
-    transition: background-color 0.3s ease;
+.form-label {
+    color: #ccc;
 }
 
-.btn-secondary:hover {
-    background-color: #545b62;
-}
-
-/* Map Styling */
-#map {
-    border: 2px solid #ccc;
+.form-control {
+    background-color: #1c2c3c;
+    border: 1px solid #3e4f5c;
+    color: #fff;
     border-radius: 8px;
 }
 
-/* Tables */
-.table th {
-    background-color: #343a40 !important;
-    color: white !important;
+.form-control::placeholder {
+    color: #888;
 }
 
-.table td, .table th {
-    vertical-align: middle;
+/* Buttons */
+.btn {
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
 }
 
-/* Forms */
-.form-control {
-    border-radius: 6px;
-    border-color: #ccc;
+.btn-primary {
+    background: linear-gradient(135deg, #6e8efb, #a777e3);
+    border: none;
 }
 
-.card {
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+.btn-primary:hover {
+    background: linear-gradient(135deg, #a777e3, #6e8efb);
+    transform: scale(1.05);
 }
 
-/* Alerts */
+/* Info box */
 .alert-info {
-    background-color: #e9f7fe;
-    color: #0275d8;
-    border-color: #bce8f1;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid #a1c4fd;
+    color: #d1e9ff;
+    border-radius: 8px;
 }
 
-/* Responsive */
+/* Map styling */
+#map {
+    height: 500px;
+    border-radius: 12px;
+    box-shadow: 0 0 12px rgba(0,0,0,0.3);
+}
+
+/* Responsive tweaks */
 @media (max-width: 768px) {
-    .btn-lg {
-        font-size: 1rem;
-        padding: 0.75rem 1.25rem;
+    h1 {
+        font-size: 2rem;
     }
-
-    .container {
-        padding: 0 15px;
+    .btn {
+        width: 100%;
     }
-}
-
-/* Footer (if needed later) */
-footer {
-    margin-top: 40px;
-    padding: 20px;
-    background: #222;
-    color: white;
-    text-align: center;
-    border-top: 4px solid #007bff;
 }
