@@ -1,1 +1,22 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Smart Bus Management System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body class="bg-light">
+    <div class="container text-center mt-5">
+        <h1 class="display-4">Smart College Bus Management</h1>
+        <p class="lead">Optimize routes. Track buses. Stay informed.</p>
+        <div class="mt-4">
+            <a href="{{ url_for('student_dashboard') }}" class="btn btn-primary btn-lg me-3">Student Portal</a>
+            <a href="{{ url_for('admin_dashboard') }}" class="btn btn-secondary btn-lg">Admin Portal</a>
+        </div>
+        <div class="mt-5">
+            <img src="{{ url_for('static', filename='images/bus_map.png') }}" alt="Bus Map" class="img-fluid" style="max-height: 400px;">
+        </div>
+    </div>
+</body>
+</html>
