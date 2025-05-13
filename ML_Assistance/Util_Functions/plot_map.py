@@ -40,3 +40,22 @@ def plot_route_map(coord_dict,graph_obj,start_point,end_point):
 
     # Display the map
     return m
+
+def selective_line(coord_dict, graph_obj, names_list):
+    m = None
+    for i in range(len(names_list) - 1):
+        start_location = names_list[i]
+        end_location = names_list[i + 1]
+        
+        # Create a route map from the start location to the current end location
+        route_map = plot_route_map(coord_dict, graph_obj, start_location, end_location)
+        
+        # If it's the first map, initialize m with it, else combine with existing map
+        if m is None:
+            m = route_map
+        else:
+            # To combine maps, we'll need to add new markers and lines to the existing map
+            for marker in route_map._children.values():
+                m.add_child(marker)
+
+    return m
