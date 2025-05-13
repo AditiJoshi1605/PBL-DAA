@@ -48,7 +48,7 @@ def get_bus_details(stop_point: str):
         results.append([
             driver,
             bus_id,
-            "Incoming",
+            "Incoming.",
             [time],
             stop_point.title(),
             ["Will reach at this time"]
