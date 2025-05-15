@@ -3,21 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>Admin Dashboard - Smart Bus System</title>
+    <link rel="stylesheet" href="static/css/styles.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
-<body class="bg-light">
+<body>
+    <div id="tsparticles"></div>
 
-    <div class="container-fluid mt-3">
+    <div class="container mt-3 reveal">
         <h2 class="text-center">Admin Dashboard</h2>
+        <div id="map" style="height: 500px;" class="my-4 rounded shadow reveal"></div>
 
-        <!-- Map Section -->
-        <div id="map" style="height: 500px;" class="my-4 rounded shadow"></div>
-
-        <!-- Bus Status Table -->
-        <div class="table-responsive mb-4">
-            <table class="table table-bordered table-hover bg-white">
+        <div class="table-responsive mb-4 reveal">
+            <table class="table table-bordered table-hover bg-white text-dark">
                 <thead class="table-dark">
                     <tr>
                         <th>Bus ID</th>
@@ -26,29 +24,24 @@
                         <th>Status</th>
                     </tr>
                 </thead>
-                <tbody id="busTableBody">
-                    <!-- Filled dynamically via JavaScript -->
-                </tbody>
+                <tbody id="busTableBody"></tbody>
             </table>
         </div>
 
-        <!-- Emergency Alert Section -->
-        <div class="mb-5">
+        <div class="mb-5 reveal">
             <h4>Emergency Response</h4>
             <button class="btn btn-danger" onclick="sendEmergencyAlert()">Trigger Emergency Alert</button>
         </div>
     </div>
 
-    <!-- Scripts -->
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
     <script>
-        // Initialize Leaflet map
         const map = L.map('map').setView([30.3165, 78.0322], 13);
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: 'Map data © OpenStreetMap contributors'
         }).addTo(map);
 
-        // Example bus data (will Replace with dynamic values via AJAX or WebSocket)
         const buses = [
             { id: "Bus 101", route: "Route A", lat: 30.3165, lng: 78.0322, status: "On Time" },
             { id: "Bus 202", route: "Route B", lat: 30.3151, lng: 78.0400, status: "Delayed" }
@@ -56,26 +49,43 @@
 
         const busTable = document.getElementById("busTableBody");
         buses.forEach(bus => {
-            L.marker([bus.lat, bus.lng])
-                .addTo(map)
-                .bindPopup(`<b>${bus.id}</b><br>${bus.route}<br>Status: ${bus.status}`);
-
+            L.marker([bus.lat, bus.lng]).addTo(map).bindPopup(`<b>${bus.id}</b><br>${bus.route}<br>Status: ${bus.status}`);
             const row = document.createElement("tr");
-            row.innerHTML = `
-                <td>${bus.id}</td>
-                <td>${bus.route}</td>
-                <td>${bus.lat.toFixed(4)}, ${bus.lng.toFixed(4)}</td>
-                <td>${bus.status}</td>
-            `;
+            row.innerHTML = `<td>${bus.id}</td><td>${bus.route}</td><td>${bus.lat.toFixed(4)}, ${bus.lng.toFixed(4)}</td><td>${bus.status}</td>`;
             busTable.appendChild(row);
         });
 
         function sendEmergencyAlert() {
             alert("🚨 Emergency Alert Sent to All Buses!");
-            // TODO: Trigger server-side SocketIO or API call here
         }
-    </script>
 
+        const revealElements = document.querySelectorAll('.reveal');
+        const onScroll = () => {
+            const triggerPoint = window.innerHeight * 0.85;
+            revealElements.forEach(el => {
+                const top = el.getBoundingClientRect().top;
+                el.classList.toggle('active', top < triggerPoint);
+            });
+        };
+        window.addEventListener('scroll', onScroll);
+        onScroll();
+
+        tsParticles.load("tsparticles", {
+            fullScreen: { enable: true, zIndex: -1 },
+            particles: {
+                number: { value: 80 },
+                color: { value: "#ffffff" },
+                shape: { type: "circle" },
+                opacity: { value: 0.2 },
+                size: { value: 3 },
+                move: { enable: true, speed: 1, outModes: { default: "out" } }
+            },
+            interactivity: {
+                events: { onHover: { enable: true, mode: "repulse" }, resize: true },
+                modes: { repulse: { distance: 100, duration: 0.4 } }
+            },
+            background: { color: "#0f2027" }
+        });
+    </script>
 </body>
 </html>
-
