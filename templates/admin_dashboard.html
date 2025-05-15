@@ -59,33 +59,33 @@
             alert("🚨 Emergency Alert Sent to All Buses!");
         }
 
-        const revealElements = document.querySelectorAll('.reveal');
-        const onScroll = () => {
-            const triggerPoint = window.innerHeight * 0.85;
-            revealElements.forEach(el => {
-                const top = el.getBoundingClientRect().top;
-                el.classList.toggle('active', top < triggerPoint);
-            });
-        };
-        window.addEventListener('scroll', onScroll);
-        onScroll();
+        // const revealElements = document.querySelectorAll('.reveal');
+        // const onScroll = () => {
+        //     const triggerPoint = window.innerHeight * 0.85;
+        //     revealElements.forEach(el => {
+        //         const top = el.getBoundingClientRect().top;
+        //         el.classList.toggle('active', top < triggerPoint);
+        //     });
+        // };
+        // window.addEventListener('scroll', onScroll);
+        // onScroll();
 
-        tsParticles.load("tsparticles", {
-            fullScreen: { enable: true, zIndex: -1 },
-            particles: {
-                number: { value: 80 },
-                color: { value: "#ffffff" },
-                shape: { type: "circle" },
-                opacity: { value: 0.2 },
-                size: { value: 3 },
-                move: { enable: true, speed: 1, outModes: { default: "out" } }
-            },
-            interactivity: {
-                events: { onHover: { enable: true, mode: "repulse" }, resize: true },
-                modes: { repulse: { distance: 100, duration: 0.4 } }
-            },
-            background: { color: "#0f2027" }
-        });
+        // tsParticles.load("tsparticles", {
+        //     fullScreen: { enable: true, zIndex: -1 },
+        //     particles: {
+        //         number: { value: 80 },
+        //         color: { value: "#ffffff" },
+        //         shape: { type: "circle" },
+        //         opacity: { value: 0.2 },
+        //         size: { value: 3 },
+        //         move: { enable: true, speed: 1, outModes: { default: "out" } }
+        //     },
+        //     interactivity: {
+        //         events: { onHover: { enable: true, mode: "repulse" }, resize: true },
+        //         modes: { repulse: { distance: 100, duration: 0.4 } }
+        //     },
+        //     background: { color: "#0f2027" }
+        // });
     </script>
 </body>
 </html>
