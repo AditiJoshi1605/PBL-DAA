@@ -56,19 +56,20 @@
         });
 
         function sendEmergencyAlert() {
-            alert("🚨 Emergency Alert Sent to All Buses!");
+            alert("Emergency Alert Sent to All Buses!");
         }
+        // document.getElementsByClassName('btn btn-danger').addEventListener('click',sendEmergencyAlert);
 
-        // const revealElements = document.querySelectorAll('.reveal');
-        // const onScroll = () => {
-        //     const triggerPoint = window.innerHeight * 0.85;
-        //     revealElements.forEach(el => {
-        //         const top = el.getBoundingClientRect().top;
-        //         el.classList.toggle('active', top < triggerPoint);
-        //     });
-        // };
-        // window.addEventListener('scroll', onScroll);
-        // onScroll();
+        const revealElements = document.querySelectorAll('.reveal');
+        const onScroll = () => {
+            const triggerPoint = window.innerHeight * 0.85;
+            revealElements.forEach(el => {
+                const top = el.getBoundingClientRect().top;
+                el.classList.toggle('active', top < triggerPoint);
+            });
+        };
+        window.addEventListener('scroll', onScroll);
+        onScroll();
 
         // tsParticles.load("tsparticles", {
         //     fullScreen: { enable: true, zIndex: -1 },
