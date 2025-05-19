@@ -21,20 +21,21 @@
                         <th>Status</th>
                     </tr>
                 </thead>
+                <tbody id="TableBody"></tbody>
             </table>
         </div>
 
-        <div class="emergency">
+        <section class="emergency">
             <h4>Emergency Response</h4>
-            <button class="btn danger" onclick="sendEmergencyAlert()">Trigger Emergency Alert</button>
-        </div>
+            <button class="btn btn-danger" onclick="sendEmergencyAlert()">Trigger Emergency Alert</button>
+        </section>
     </div>
 
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     
-    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script> 
     <script>
-        const map = L.map('map').setView([30.3165, 78.0322], 13);
+        window.onload=()=>{
+            const map = L.map('map').setView([30.3165, 78.0322], 13);
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: 'Map data © OpenStreetMap contributors'
         }).addTo(map);
@@ -44,14 +45,20 @@
             { id: "Bus 202", route: "Route B", lat: 30.3151, lng: 78.0400, status: "Delayed" }
         ];
 
-        const busTable = document.getElementById("busTableBody");
+        const busTable = document.getElementById("TableBody");
         buses.forEach(bus => {
             L.marker([bus.lat, bus.lng]).addTo(map).bindPopup(`<b>${bus.id}</b><br>${bus.route}<br>Status: ${bus.status}`);
             const row = document.createElement("tr");
-            row.innerHTML = `<td>${bus.id}</td><td>${bus.route}</td><td>${bus.lat.toFixed(4)}, ${bus.lng.toFixed(4)}</td><td>${bus.status}</td>`;
+            row.innerHTML = `
+                <td>${bus.id}</td>
+                <td>${bus.route}</td>
+                <td>${bus.lat.toFixed(4)}, ${bus.lng.toFixed(4)}</td>
+                <td>${bus.status}</td>
+            `;
             busTable.appendChild(row);
         });
 
+        };
         function sendEmergencyAlert() {
             alert("Emergency Alert Sent to All Buses!");
         }
