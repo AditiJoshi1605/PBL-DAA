@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
-
-body, html {
+body, html{
     margin: 0;
     padding: 0;
     font-family: 'Inter', sans-serif;
@@ -9,136 +8,131 @@ body, html {
     scroll-behavior: smooth;
 }
 
-body::before {
-    content: "";
+body::before{
+    content:"";
     position: fixed;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(255,255,255,0.03) 10%, transparent 10.01%);
+    top:-50%;
+    left:-50%;
+    width:200%;
+    height:200%;
+    background: radial-gradient(circle,rgba(255,255,255,0.03) 10%,transparent 10.01%);
     background-size: 20px 20px;
     animation: animateBG 20s linear infinite;
-    z-index: -1;
-    pointer-events: none;
+    z-index:-1;
+    pointer-events:none;
+}
+@keyframes animateBG{
+    0%{transform: rotate(0deg);}
+    100%{transform: rotate(360deg);}
 }
 
-@keyframes animateBG {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+.container{
+    max-width:1100px;
+    margin:auto;
+    padding:20px;
 }
 
-.container {
-    max-width: 1100px;
-    margin: auto;
-    padding: 20px;
+h1,h2,h4{
+    color:#ffffff;
+    text-align:center;
+    letter-spacing:1px;
+    margin-bottom:20px;
 }
 
-h1, h2, h4 {
-    color: #ffffff;
-    text-align: center;
-    letter-spacing: 1px;
-    margin-bottom: 20px;
-}
-
-.btn {
-    font-weight: 600;
-    letter-spacing: 0.5px;
+.btn{
+    font-weight:600;
+    letter-spacing:0.5px;
     border-radius: 8px;
     transition: all 0.3s ease;
 }
 
-.btn-primary {
-    background: linear-gradient(135deg, #6e8efb, #a777e3);
-    border: none;
+.stu_btn{
+    background: linear-gradient(135deg,#6e8efb,#a777e3);
+    border:none;
 }
 
-.btn-primary:hover {
-    background: linear-gradient(135deg, #a777e3, #6e8efb);
-    transform: scale(1.05);
+.stu_btn:hover{
+    background: linear-gradient(135deg,#a777e3,#6e8efb);
+    transform: scale(1.1);
 }
 
-.btn-secondary {
-    background-color: #6c757d;
-    border: none;
+.admin_btn{
+    background-color: #82b3e0;
+    border:none;
 }
 
-.btn-secondary:hover {
-    background-color: #5a6268;
-    transform: scale(1.05);
+.admin_btn:hover{
+    background: linear-gradient(135deg,#5a6268);
+    transform: scale(1.1);
 }
 
-.card {
-    background: rgba(255, 255, 255, 0.05);
+.card{
+    background:rgba(255,255,255,0.05);
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0 0 10px rgba(0,0,0,0.4);
 }
 
-.form-control {
+.form-control{
     background-color: #1c2c3c;
-    border: 1px solid #3e4f5c;
-    color: #fff;
+    border:1px solid #3e4f5c;
+    color:#fff;
     border-radius: 8px;
 }
 
-.form-control::placeholder {
-    color: #888;
+.form-control::placeholder{
+    color:#888;
 }
 
-.alert-info {
-    background-color: rgba(255, 255, 255, 0.05);
-    border: 1px solid #a1c4fd;
+.alert-info{
+    background-color: rgba(255,255,255,0.05);
+    border:1px solid #a1c4fd;
     color: #d1e9ff;
-    border-radius: 8px;
+    border-radius:8px;
 }
 
-.table {
+.table{
     background-color: white;
-    color: #333;
+    color:#333;
     border-radius: 6px;
     overflow: hidden;
 }
 
-#map {
-    height: 500px;
+#map{
+    height:500px;
     border-radius: 12px;
     box-shadow: 0 0 12px rgba(0,0,0,0.3);
 }
 
-#tsparticles {
+#tsparticles{
     position: fixed;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    top: 0;
-    left: 0;
+    width:100%;
+    height:100%;
+    z-index:-1;
+    top:0;
+    left:0;
 }
 
-/* Scroll reveal animation */
-.reveal {
-    opacity: 0;
-    transform: translateY(40px);
+.reveal{
+    opacity:0;
+    transform:translateY(40px);
     transition: all 0.6s ease;
 }
 
-.reveal.active {
-    opacity: 1;
-    transform: translateY(0px);
+.reveal.active{
+    opacity:1;
+    transform:translateY(0px);
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    h1 {
-        font-size: 2rem;
+@media(max-width:768px){
+    h1{
+        font-size:2rem;
     }
-
-    .btn {
-        width: 100%;
-        margin-bottom: 10px;
+    .btn{
+        width:100%;
+        margin-bottom:10px;
     }
-
-    .container {
-        padding: 10px;
+    .container{
+        padding:10px;
     }
 }
