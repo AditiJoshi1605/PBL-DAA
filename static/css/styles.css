@@ -38,6 +38,12 @@ h1,h2,h4{
     letter-spacing:1px;
     margin-bottom:20px;
 }
+h4{
+    color:#ffffff;
+    text-align:left;
+    letter-spacing:1px;
+    margin-bottom:10px;
+}
 
 .btn{
     font-weight:600;
@@ -99,8 +105,8 @@ h1,h2,h4{
 }
 
 #map{
-    height:500px;
-    border-radius: 12px;
+    height:1000px;
+    border-radius: 10px;
     box-shadow: 0 0 12px rgba(0,0,0,0.3);
 }
 
