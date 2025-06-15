@@ -1,0 +1,502 @@
+Bus_No,Time,Arc,Current_Location,Next_Stop,Driver_Name,Contact_No
+9,7:00,AM,Clock Tower,Darshanlal Chowk,Arjun Gurung,9557782210
+9,7:15,AM,Darshanlal Chowk,Saharanpur Chowk,Arjun Gurung,9557782210
+9,7:30,AM,Saharanpur Chowk,ISBT dehradun,Arjun Gurung,9557782210
+9,7:45,AM,ISBT dehradun,graphic era hill university,Arjun Gurung,9557782210
+9,8:00,AM,graphic era hill university,End of Route,Arjun Gurung,9557782210
+18,7:00,AM,Clock Tower,Darshanlal Chowk,Sunil Kumar IV,7060226291
+18,7:15,AM,Darshanlal Chowk,Saharanpur Chowk,Sunil Kumar IV,7060226291
+18,7:30,AM,Saharanpur Chowk,ISBT dehradun,Sunil Kumar IV,7060226291
+18,7:45,AM,ISBT dehradun,graphic era hill university,Sunil Kumar IV,7060226291
+18,8:00,AM,graphic era hill university,End of Route,Sunil Kumar IV,7060226291
+24,7:00,AM,Clock Tower,Darshanlal Chowk,M.R Rama,8958990677
+24,7:15,AM,Darshanlal Chowk,Saharanpur Chowk,M.R Rama,8958990677
+24,7:30,AM,Saharanpur Chowk,ISBT dehradun,M.R Rama,8958990677
+24,7:45,AM,ISBT dehradun,graphic era hill university,M.R Rama,8958990677
+24,8:00,AM,graphic era hill university,End of Route,M.R Rama,8958990677
+42,7:00,AM,Asley Hall,Clock Tower,Gudmohan,7060656243
+42,7:15,AM,Clock Tower,Darshanlal Chowk,Gudmohan,7060656243
+42,7:30,AM,Darshanlal Chowk,Saharanpur Chowk,Gudmohan,7060656243
+42,7:45,AM,Saharanpur Chowk,ISBT dehradun,Gudmohan,7060656243
+42,8:00,AM,ISBT dehradun,graphic era hill university,Gudmohan,7060656243
+42,8:15,AM,graphic era hill university,End of Route,Gudmohan,7060656243
+64,7:00,AM,Asley Hall,Clock Tower,Hari Singh,9410105794
+64,7:15,AM,Clock Tower,Darshanlal Chowk,Hari Singh,9410105794
+64,7:30,AM,Darshanlal Chowk,Saharanpur Chowk,Hari Singh,9410105794
+64,7:45,AM,Saharanpur Chowk,ISBT dehradun,Hari Singh,9410105794
+64,8:00,AM,ISBT dehradun,graphic era hill university,Hari Singh,9410105794
+64,8:15,AM,graphic era hill university,End of Route,Hari Singh,9410105794
+2,7:00,AM,Saharanpur Chowk,Matawala Bagh,Deepak Thapa,7455092818
+2,7:15,AM,Matawala Bagh,ISBT dehradun,Deepak Thapa,7455092818
+2,7:30,AM,ISBT dehradun,graphic era hill university,Deepak Thapa,7455092818
+2,7:45,AM,graphic era hill university,End of Route,Deepak Thapa,7455092818
+7,7:00,AM,Daudwala,Mathurawala,Govind Singh,9897983344
+7,7:15,AM,Mathurawala,Vishnupuram,Govind Singh,9897983344
+7,7:30,AM,Vishnupuram,Bangali Kothi,Govind Singh,9897983344
+7,7:45,AM,Bangali Kothi,Kargi Chowk,Govind Singh,9897983344
+7,8:00,AM,Kargi Chowk,ISBT dehradun,Govind Singh,9897983344
+7,8:15,AM,ISBT dehradun,graphic era hill university,Govind Singh,9897983344
+7,8:30,AM,graphic era hill university,End of Route,Govind Singh,9897983344
+72,7:00,AM,Daudwala,Mathurawala,Deepak Sharma,9634625829
+72,7:15,AM,Mathurawala,Vishnupuram,Deepak Sharma,9634625829
+72,7:30,AM,Vishnupuram,Bangali Kothi,Deepak Sharma,9634625829
+72,7:45,AM,Bangali Kothi,Kargi Chowk,Deepak Sharma,9634625829
+72,8:00,AM,Kargi Chowk,ISBT dehradun,Deepak Sharma,9634625829
+72,8:15,AM,ISBT dehradun,graphic era hill university,Deepak Sharma,9634625829
+72,8:30,AM,graphic era hill university,End of Route,Deepak Sharma,9634625829
+16,7:00,AM,Bangali Kothi,Kargi Chowk,Bharam Dev,9759196095
+16,7:15,AM,Kargi Chowk,ISBT dehradun,Bharam Dev,9759196095
+16,7:30,AM,ISBT dehradun,graphic era hill university,Bharam Dev,9759196095
+16,7:45,AM,graphic era hill university,End of Route,Bharam Dev,9759196095
+27,6:35,AM,Doiwala,Lachiwala,Gulveer,7351447607
+27,6:50,AM,Lachiwala,Kuanwala,Gulveer,7351447607
+27,7:05,AM,Kuanwala,Harawala,Gulveer,7351447607
+27,7:20,AM,Harawala,Miawala,Gulveer,7351447607
+27,7:35,AM,Miawala,Mokampur,Gulveer,7351447607
+27,7:50,AM,Mokampur,Jogiwala,Gulveer,7351447607
+27,8:05,AM,Jogiwala,Rispana,Gulveer,7351447607
+27,8:20,AM,Rispana,ISBT dehradun,Gulveer,7351447607
+27,8:35,AM,ISBT dehradun,graphic era hill university,Gulveer,7351447607
+27,8:50,AM,graphic era hill university,End of Route,Gulveer,7351447607
+39,6:35,AM,Doiwala,Lachiwala,Joginder Singh,8755290852
+39,6:50,AM,Lachiwala,Kuanwala,Joginder Singh,8755290852
+39,7:05,AM,Kuanwala,Harawala,Joginder Singh,8755290852
+39,7:20,AM,Harawala,Miawala,Joginder Singh,8755290852
+39,7:35,AM,Miawala,Mokampur,Joginder Singh,8755290852
+39,7:50,AM,Mokampur,Jogiwala,Joginder Singh,8755290852
+39,8:05,AM,Jogiwala,Rispana,Joginder Singh,8755290852
+39,8:20,AM,Rispana,ISBT dehradun,Joginder Singh,8755290852
+39,8:35,AM,ISBT dehradun,graphic era hill university,Joginder Singh,8755290852
+39,8:50,AM,graphic era hill university,End of Route,Joginder Singh,8755290852
+40,6:35,AM,Doiwala,Lachiwala,Harish Rawat,9520226722
+40,6:50,AM,Lachiwala,Kuanwala,Harish Rawat,9520226722
+40,7:05,AM,Kuanwala,Harawala,Harish Rawat,9520226722
+40,7:20,AM,Harawala,Miawala,Harish Rawat,9520226722
+40,7:35,AM,Miawala,Mokampur,Harish Rawat,9520226722
+40,7:50,AM,Mokampur,Jogiwala,Harish Rawat,9520226722
+40,8:05,AM,Jogiwala,Rispana,Harish Rawat,9520226722
+40,8:20,AM,Rispana,ISBT dehradun,Harish Rawat,9520226722
+40,8:35,AM,ISBT dehradun,graphic era hill university,Harish Rawat,9520226722
+40,8:50,AM,graphic era hill university,End of Route,Harish Rawat,9520226722
+49,6:35,AM,Doiwala,Lachiwala,Ashwani,7500609291
+49,6:50,AM,Lachiwala,Kuanwala,Ashwani,7500609291
+49,7:05,AM,Kuanwala,Harawala,Ashwani,7500609291
+49,7:20,AM,Harawala,Miawala,Ashwani,7500609291
+49,7:35,AM,Miawala,Mokampur,Ashwani,7500609291
+49,7:50,AM,Mokampur,Jogiwala,Ashwani,7500609291
+49,8:05,AM,Jogiwala,Rispana,Ashwani,7500609291
+49,8:20,AM,Rispana,ISBT dehradun,Ashwani,7500609291
+49,8:35,AM,ISBT dehradun,graphic era hill university,Ashwani,7500609291
+49,8:50,AM,graphic era hill university,End of Route,Ashwani,7500609291
+57,6:35,AM,Doiwala,Lachiwala,Narayan Singh,9808827678
+57,6:50,AM,Lachiwala,Kuanwala,Narayan Singh,9808827678
+57,7:05,AM,Kuanwala,Harawala,Narayan Singh,9808827678
+57,7:20,AM,Harawala,Miawala,Narayan Singh,9808827678
+57,7:35,AM,Miawala,Mokampur,Narayan Singh,9808827678
+57,7:50,AM,Mokampur,Jogiwala,Narayan Singh,9808827678
+57,8:05,AM,Jogiwala,Rispana,Narayan Singh,9808827678
+57,8:20,AM,Rispana,ISBT dehradun,Narayan Singh,9808827678
+57,8:35,AM,ISBT dehradun,graphic era hill university,Narayan Singh,9808827678
+57,8:50,AM,graphic era hill university,End of Route,Narayan Singh,9808827678
+5,6:35,AM,Doiwala,Lachiwala,Kamlesh Kumar,7088320038
+5,6:50,AM,Lachiwala,Kuanwala,Kamlesh Kumar,7088320038
+5,7:05,AM,Kuanwala,Harawala,Kamlesh Kumar,7088320038
+5,7:20,AM,Harawala,Miawala,Kamlesh Kumar,7088320038
+5,7:35,AM,Miawala,Mokampur,Kamlesh Kumar,7088320038
+5,7:50,AM,Mokampur,Jogiwala,Kamlesh Kumar,7088320038
+5,8:05,AM,Jogiwala,Rispana,Kamlesh Kumar,7088320038
+5,8:20,AM,Rispana,ISBT dehradun,Kamlesh Kumar,7088320038
+5,8:35,AM,ISBT dehradun,graphic era hill university,Kamlesh Kumar,7088320038
+5,8:50,AM,graphic era hill university,End of Route,Kamlesh Kumar,7088320038
+38,6:45,AM,Gujraunwala,Raipur Chowk,Mukesh Kumar II,9068392244
+38,7:00,AM,Raipur Chowk,Dobhal Chowk,Mukesh Kumar II,9068392244
+38,7:15,AM,Dobhal Chowk,6 No. Pulia,Mukesh Kumar II,9068392244
+38,7:30,AM,6 No. Pulia,Ring Road,Mukesh Kumar II,9068392244
+38,7:45,AM,Ring Road,Post Office Nehru Gram,Mukesh Kumar II,9068392244
+38,8:00,AM,Post Office Nehru Gram,Jogiwala,Mukesh Kumar II,9068392244
+38,8:15,AM,Jogiwala,Rispana,Mukesh Kumar II,9068392244
+38,8:30,AM,Rispana,ISBT dehradun,Mukesh Kumar II,9068392244
+38,8:45,AM,ISBT dehradun,graphic era hill university,Mukesh Kumar II,9068392244
+38,9:00,AM,graphic era hill university,End of Route,Mukesh Kumar II,9068392244
+44,6:45,AM,Gujraunwala,Raipur Chowk,Sagar Pal,7505864402
+44,7:00,AM,Raipur Chowk,Dobhal Chowk,Sagar Pal,7505864402
+44,7:15,AM,Dobhal Chowk,6 No. Pulia,Sagar Pal,7505864402
+44,7:30,AM,6 No. Pulia,Ring Road,Sagar Pal,7505864402
+44,7:45,AM,Ring Road,Post Office Nehru Gram,Sagar Pal,7505864402
+44,8:00,AM,Post Office Nehru Gram,Jogiwala,Sagar Pal,7505864402
+44,8:15,AM,Jogiwala,Rispana,Sagar Pal,7505864402
+44,8:30,AM,Rispana,ISBT dehradun,Sagar Pal,7505864402
+44,8:45,AM,ISBT dehradun,graphic era hill university,Sagar Pal,7505864402
+44,9:00,AM,graphic era hill university,End of Route,Sagar Pal,7505864402
+61,6:45,AM,Gujraunwala,Raipur Chowk,Dinesh Joshi,9634701355
+61,7:00,AM,Raipur Chowk,Dobhal Chowk,Dinesh Joshi,9634701355
+61,7:15,AM,Dobhal Chowk,6 No. Pulia,Dinesh Joshi,9634701355
+61,7:30,AM,6 No. Pulia,Ring Road,Dinesh Joshi,9634701355
+61,7:45,AM,Ring Road,Post Office Nehru Gram,Dinesh Joshi,9634701355
+61,8:00,AM,Post Office Nehru Gram,Jogiwala,Dinesh Joshi,9634701355
+61,8:15,AM,Jogiwala,Rispana,Dinesh Joshi,9634701355
+61,8:30,AM,Rispana,ISBT dehradun,Dinesh Joshi,9634701355
+61,8:45,AM,ISBT dehradun,graphic era hill university,Dinesh Joshi,9634701355
+61,9:00,AM,graphic era hill university,End of Route,Dinesh Joshi,9634701355
+66,6:45,AM,Raipur Chowk,Dobhal Chowk,Meen Bahadur,6399150551
+66,7:00,AM,Dobhal Chowk,6 No. Pulia,Meen Bahadur,6399150551
+66,7:15,AM,6 No. Pulia,Ring Road,Meen Bahadur,6399150551
+66,7:30,AM,Ring Road,Post Office Nehru Gram,Meen Bahadur,6399150551
+66,7:45,AM,Post Office Nehru Gram,Jogiwala,Meen Bahadur,6399150551
+66,8:00,AM,Jogiwala,Rispana,Meen Bahadur,6399150551
+66,8:15,AM,Rispana,ISBT dehradun,Meen Bahadur,6399150551
+66,8:30,AM,ISBT dehradun,graphic era hill university,Meen Bahadur,6399150551
+66,8:45,AM,graphic era hill university,End of Route,Meen Bahadur,6399150551
+70,6:45,AM,Raipur Chowk,Dobhal Chowk,Pratap Singh,7060327077
+70,7:00,AM,Dobhal Chowk,6 No. Pulia,Pratap Singh,7060327077
+70,7:15,AM,6 No. Pulia,Ring Road,Pratap Singh,7060327077
+70,7:30,AM,Ring Road,Post Office Nehru Gram,Pratap Singh,7060327077
+70,7:45,AM,Post Office Nehru Gram,Jogiwala,Pratap Singh,7060327077
+70,8:00,AM,Jogiwala,Rispana,Pratap Singh,7060327077
+70,8:15,AM,Rispana,ISBT dehradun,Pratap Singh,7060327077
+70,8:30,AM,ISBT dehradun,graphic era hill university,Pratap Singh,7060327077
+70,8:45,AM,graphic era hill university,End of Route,Pratap Singh,7060327077
+10,6:45,AM,Raipur Chowk,Dobhal Chowk,Naresh Chandra,8938887690
+10,7:00,AM,Dobhal Chowk,6 No. Pulia,Naresh Chandra,8938887690
+10,7:15,AM,6 No. Pulia,Ring Road,Naresh Chandra,8938887690
+10,7:30,AM,Ring Road,Post Office Nehru Gram,Naresh Chandra,8938887690
+10,7:45,AM,Post Office Nehru Gram,Jogiwala,Naresh Chandra,8938887690
+10,8:00,AM,Jogiwala,Rispana,Naresh Chandra,8938887690
+10,8:15,AM,Rispana,ISBT dehradun,Naresh Chandra,8938887690
+10,8:30,AM,ISBT dehradun,graphic era hill university,Naresh Chandra,8938887690
+10,8:45,AM,graphic era hill university,End of Route,Naresh Chandra,8938887690
+55,6:45,AM,Raipur Chowk,Dobhal Chowk,Surveer Singh,7078751311
+55,7:00,AM,Dobhal Chowk,6 No. Pulia,Surveer Singh,7078751311
+55,7:15,AM,6 No. Pulia,Ring Road,Surveer Singh,7078751311
+55,7:30,AM,Ring Road,Post Office Nehru Gram,Surveer Singh,7078751311
+55,7:45,AM,Post Office Nehru Gram,Jogiwala,Surveer Singh,7078751311
+55,8:00,AM,Jogiwala,Rispana,Surveer Singh,7078751311
+55,8:15,AM,Rispana,ISBT dehradun,Surveer Singh,7078751311
+55,8:30,AM,ISBT dehradun,graphic era hill university,Surveer Singh,7078751311
+55,8:45,AM,graphic era hill university,End of Route,Surveer Singh,7078751311
+77,6:45,AM,Post Office Nehru Gram,Jogiwala,Gajender Singh Rana,7535907988
+77,7:00,AM,Jogiwala,Rispana,Gajender Singh Rana,7535907988
+77,7:15,AM,Rispana,ISBT dehradun,Gajender Singh Rana,7535907988
+77,7:30,AM,ISBT dehradun,graphic era hill university,Gajender Singh Rana,7535907988
+77,7:45,AM,graphic era hill university,End of Route,Gajender Singh Rana,7535907988
+8,6:45,AM,Post Office Nehru Gram,Jogiwala,Sanjeev Gurung,7464924796
+8,7:00,AM,Jogiwala,Rispana,Sanjeev Gurung,7464924796
+8,7:15,AM,Rispana,ISBT dehradun,Sanjeev Gurung,7464924796
+8,7:30,AM,ISBT dehradun,graphic era hill university,Sanjeev Gurung,7464924796
+8,7:45,AM,graphic era hill university,End of Route,Sanjeev Gurung,7464924796
+20,7:00,AM,Hathibadkala,Garhi Cant,Sunil Kumar,8958342280
+20,7:15,AM,Garhi Cant,Vijay Coloney,Sunil Kumar,8958342280
+20,7:30,AM,Vijay Coloney,Chir Bagh,Sunil Kumar,8958342280
+20,7:45,AM,Chir Bagh,CM House,Sunil Kumar,8958342280
+20,8:00,AM,CM House,Garhi Cant,Sunil Kumar,8958342280
+20,8:15,AM,Garhi Cant,ONGC Chowk,Sunil Kumar,8958342280
+20,8:30,AM,ONGC Chowk,Ballupur Chowk,Sunil Kumar,8958342280
+20,8:45,AM,Ballupur Chowk,GMS Road,Sunil Kumar,8958342280
+20,9:00,AM,GMS Road,graphic era hill university,Sunil Kumar,8958342280
+20,9:15,AM,graphic era hill university,End of Route,Sunil Kumar,8958342280
+69,7:00,AM,Hathibadkala,Garhi Cant,Veer Singh,9997810167
+69,7:15,AM,Garhi Cant,Vijay Coloney,Veer Singh,9997810167
+69,7:30,AM,Vijay Coloney,Chir Bagh,Veer Singh,9997810167
+69,7:45,AM,Chir Bagh,CM House,Veer Singh,9997810167
+69,8:00,AM,CM House,Garhi Cant,Veer Singh,9997810167
+69,8:15,AM,Garhi Cant,ONGC Chowk,Veer Singh,9997810167
+69,8:30,AM,ONGC Chowk,Ballupur Chowk,Veer Singh,9997810167
+69,8:45,AM,Ballupur Chowk,GMS Road,Veer Singh,9997810167
+69,9:00,AM,GMS Road,graphic era hill university,Veer Singh,9997810167
+69,9:15,AM,graphic era hill university,End of Route,Veer Singh,9997810167
+81,7:00,AM,Rajender Nagar,Yamuna Coloney,Sher Bahadur,8126296527
+81,7:15,AM,Yamuna Coloney,Bindal Pul,Sher Bahadur,8126296527
+81,7:30,AM,Bindal Pul,Kishan Nagar,Sher Bahadur,8126296527
+81,7:45,AM,Kishan Nagar,Blood Bank,Sher Bahadur,8126296527
+81,8:00,AM,Blood Bank,Ballupur Chowk,Sher Bahadur,8126296527
+81,8:15,AM,Ballupur Chowk,GMS Road,Sher Bahadur,8126296527
+81,8:30,AM,GMS Road,graphic era hill university,Sher Bahadur,8126296527
+81,8:45,AM,graphic era hill university,End of Route,Sher Bahadur,8126296527
+84,7:00,AM,Rajender Nagar,Yamuna Coloney,Madan Bahadur,7078529212
+84,7:15,AM,Yamuna Coloney,Bindal Pul,Madan Bahadur,7078529212
+84,7:30,AM,Bindal Pul,Kishan Nagar,Madan Bahadur,7078529212
+84,7:45,AM,Kishan Nagar,Blood Bank,Madan Bahadur,7078529212
+84,8:00,AM,Blood Bank,Ballupur Chowk,Madan Bahadur,7078529212
+84,8:15,AM,Ballupur Chowk,GMS Road,Madan Bahadur,7078529212
+84,8:30,AM,GMS Road,graphic era hill university,Madan Bahadur,7078529212
+84,8:45,AM,graphic era hill university,End of Route,Madan Bahadur,7078529212
+76,7:00,AM,Garhi Cant,Vijay Coloney,Kallan Singh,9897210157
+76,7:15,AM,Vijay Coloney,Chir Bagh,Kallan Singh,9897210157
+76,7:30,AM,Chir Bagh,CM House,Kallan Singh,9897210157
+76,7:45,AM,CM House,Garhi Cant,Kallan Singh,9897210157
+76,8:00,AM,Garhi Cant,ONGC Chowk,Kallan Singh,9897210157
+76,8:15,AM,ONGC Chowk,Ballupur Chowk,Kallan Singh,9897210157
+76,8:30,AM,Ballupur Chowk,GMS Road,Kallan Singh,9897210157
+76,8:45,AM,GMS Road,graphic era hill university,Kallan Singh,9897210157
+76,9:00,AM,graphic era hill university,End of Route,Kallan Singh,9897210157
+4,7:00,AM,Supply,Ballupur Chowk,Gopi,7452844411
+4,7:15,AM,Ballupur Chowk,GMS Road,Gopi,7452844411
+4,7:30,AM,GMS Road,graphic era hill university,Gopi,7452844411
+4,7:45,AM,graphic era hill university,End of Route,Gopi,7452844411
+21,7:00,AM,Supply,Ballupur Chowk,Lakhan Bhuiaya,8279311590
+21,7:15,AM,Ballupur Chowk,GMS Road,Lakhan Bhuiaya,8279311590
+21,7:30,AM,GMS Road,graphic era hill university,Lakhan Bhuiaya,8279311590
+21,7:45,AM,graphic era hill university,End of Route,Lakhan Bhuiaya,8279311590
+22,7:00,AM,ONGC Chowk,Ballupur Chowk,Rajender Singh,7895004471
+22,7:15,AM,Ballupur Chowk,GMS Road,Rajender Singh,7895004471
+22,7:30,AM,GMS Road,graphic era hill university,Rajender Singh,7895004471
+22,7:45,AM,graphic era hill university,End of Route,Rajender Singh,7895004471
+23,7:00,AM,ONGC Chowk,Ballupur Chowk,Sushil Kumar,8077857327
+23,7:15,AM,Ballupur Chowk,GMS Road,Sushil Kumar,8077857327
+23,7:30,AM,GMS Road,graphic era hill university,Sushil Kumar,8077857327
+23,7:45,AM,graphic era hill university,End of Route,Sushil Kumar,8077857327
+19,6:45,AM,IT Park dehradun,Nala Paani Chowk,Sagar,9058286792
+19,7:00,AM,Nala Paani Chowk,Shastdhara Crossing,Sagar,9058286792
+19,7:15,AM,Shastdhara Crossing,Ladpur,Sagar,9058286792
+19,7:30,AM,Ladpur,6 No. Pulia,Sagar,9058286792
+19,7:45,AM,6 No. Pulia,Fountain Chowk Rispana,Sagar,9058286792
+19,8:00,AM,Fountain Chowk Rispana,Kargi Chowk,Sagar,9058286792
+19,8:15,AM,Kargi Chowk,ISBT dehradun,Sagar,9058286792
+19,8:30,AM,ISBT dehradun,graphic era hill university,Sagar,9058286792
+19,8:45,AM,graphic era hill university,End of Route,Sagar,9058286792
+41,6:45,AM,IT Park dehradun,Nala Paani Chowk,Pradeep Kumar,7409544869
+41,7:00,AM,Nala Paani Chowk,Shastdhara Crossing,Pradeep Kumar,7409544869
+41,7:15,AM,Shastdhara Crossing,Ladpur,Pradeep Kumar,7409544869
+41,7:30,AM,Ladpur,6 No. Pulia,Pradeep Kumar,7409544869
+41,7:45,AM,6 No. Pulia,Fountain Chowk Rispana,Pradeep Kumar,7409544869
+41,8:00,AM,Fountain Chowk Rispana,Kargi Chowk,Pradeep Kumar,7409544869
+41,8:15,AM,Kargi Chowk,ISBT dehradun,Pradeep Kumar,7409544869
+41,8:30,AM,ISBT dehradun,graphic era hill university,Pradeep Kumar,7409544869
+41,8:45,AM,graphic era hill university,End of Route,Pradeep Kumar,7409544869
+54,6:45,AM,IT Park dehradun,Nala Paani Chowk,Mukesh Kumar I,9997243900
+54,7:00,AM,Nala Paani Chowk,Shastdhara Crossing,Mukesh Kumar I,9997243900
+54,7:15,AM,Shastdhara Crossing,Ladpur,Mukesh Kumar I,9997243900
+54,7:30,AM,Ladpur,6 No. Pulia,Mukesh Kumar I,9997243900
+54,7:45,AM,6 No. Pulia,Fountain Chowk Rispana,Mukesh Kumar I,9997243900
+54,8:00,AM,Fountain Chowk Rispana,Kargi Chowk,Mukesh Kumar I,9997243900
+54,8:15,AM,Kargi Chowk,ISBT dehradun,Mukesh Kumar I,9997243900
+54,8:30,AM,ISBT dehradun,graphic era hill university,Mukesh Kumar I,9997243900
+54,8:45,AM,graphic era hill university,End of Route,Mukesh Kumar I,9997243900
+60,6:45,AM,Shastdhara Crossing,Ladpur,Rakesh Mishra,8938963328
+60,7:00,AM,Ladpur,6 No. Pulia,Rakesh Mishra,8938963328
+60,7:15,AM,6 No. Pulia,Fountain Chowk Rispana,Rakesh Mishra,8938963328
+60,7:30,AM,Fountain Chowk Rispana,Kargi Chowk,Rakesh Mishra,8938963328
+60,7:45,AM,Kargi Chowk,ISBT dehradun,Rakesh Mishra,8938963328
+60,8:00,AM,ISBT dehradun,graphic era hill university,Rakesh Mishra,8938963328
+60,8:15,AM,graphic era hill university,End of Route,Rakesh Mishra,8938963328
+68,6:45,AM,Shastdhara Crossing,Ladpur,Naveen Thapa,7895929344
+68,7:00,AM,Ladpur,6 No. Pulia,Naveen Thapa,7895929344
+68,7:15,AM,6 No. Pulia,Fountain Chowk Rispana,Naveen Thapa,7895929344
+68,7:30,AM,Fountain Chowk Rispana,Kargi Chowk,Naveen Thapa,7895929344
+68,7:45,AM,Kargi Chowk,ISBT dehradun,Naveen Thapa,7895929344
+68,8:00,AM,ISBT dehradun,graphic era hill university,Naveen Thapa,7895929344
+68,8:15,AM,graphic era hill university,End of Route,Naveen Thapa,7895929344
+62,7:00,AM,Fountain Chowk,Nehru Colony,Mangal Singh,8755179478
+62,7:15,AM,Nehru Colony,Rispana,Mangal Singh,8755179478
+62,7:30,AM,Rispana,Kargi,Mangal Singh,8755179478
+62,7:45,AM,Kargi,graphic era hill university,Mangal Singh,8755179478
+62,8:00,AM,graphic era hill university,End of Route,Mangal Singh,8755179478
+15,7:00,AM,Nakrounda More,Harawala,Man Bahadur,9917313186
+15,7:15,AM,Harawala,Miawala,Man Bahadur,9917313186
+15,7:30,AM,Miawala,Mokampur,Man Bahadur,9917313186
+15,7:45,AM,Mokampur,Jogiwala,Man Bahadur,9917313186
+15,8:00,AM,Jogiwala,Rispana,Man Bahadur,9917313186
+15,8:15,AM,Rispana,ISBT dehradun,Man Bahadur,9917313186
+15,8:30,AM,ISBT dehradun,graphic era hill university,Man Bahadur,9917313186
+15,8:45,AM,graphic era hill university,End of Route,Man Bahadur,9917313186
+33,7:00,AM,Nakrounda More,Harawala,Dushyant Kumar,8449933850
+33,7:15,AM,Harawala,Miawala,Dushyant Kumar,8449933850
+33,7:30,AM,Miawala,Mokampur,Dushyant Kumar,8449933850
+33,7:45,AM,Mokampur,Jogiwala,Dushyant Kumar,8449933850
+33,8:00,AM,Jogiwala,Rispana,Dushyant Kumar,8449933850
+33,8:15,AM,Rispana,ISBT dehradun,Dushyant Kumar,8449933850
+33,8:30,AM,ISBT dehradun,graphic era hill university,Dushyant Kumar,8449933850
+33,8:45,AM,graphic era hill university,End of Route,Dushyant Kumar,8449933850
+34,7:00,AM,Nakrounda More,Harawala,Rahul Singh,8006777961
+34,7:15,AM,Harawala,Miawala,Rahul Singh,8006777961
+34,7:30,AM,Miawala,Mokampur,Rahul Singh,8006777961
+34,7:45,AM,Mokampur,Jogiwala,Rahul Singh,8006777961
+34,8:00,AM,Jogiwala,Rispana,Rahul Singh,8006777961
+34,8:15,AM,Rispana,ISBT dehradun,Rahul Singh,8006777961
+34,8:30,AM,ISBT dehradun,graphic era hill university,Rahul Singh,8006777961
+34,8:45,AM,graphic era hill university,End of Route,Rahul Singh,8006777961
+45,7:00,AM,Nakrounda More,Harawala,Gulshan Yadav,9837490997
+45,7:15,AM,Harawala,Miawala,Gulshan Yadav,9837490997
+45,7:30,AM,Miawala,Mokampur,Gulshan Yadav,9837490997
+45,7:45,AM,Mokampur,Jogiwala,Gulshan Yadav,9837490997
+45,8:00,AM,Jogiwala,Rispana,Gulshan Yadav,9837490997
+45,8:15,AM,Rispana,ISBT dehradun,Gulshan Yadav,9837490997
+45,8:30,AM,ISBT dehradun,graphic era hill university,Gulshan Yadav,9837490997
+45,8:45,AM,graphic era hill university,End of Route,Gulshan Yadav,9837490997
+58,7:00,AM,Nakrounda More,Harawala,kamal Pant,8958432558
+58,7:15,AM,Harawala,Miawala,kamal Pant,8958432558
+58,7:30,AM,Miawala,Mokampur,kamal Pant,8958432558
+58,7:45,AM,Mokampur,Jogiwala,kamal Pant,8958432558
+58,8:00,AM,Jogiwala,Rispana,kamal Pant,8958432558
+58,8:15,AM,Rispana,ISBT dehradun,kamal Pant,8958432558
+58,8:30,AM,ISBT dehradun,graphic era hill university,kamal Pant,8958432558
+58,8:45,AM,graphic era hill university,End of Route,kamal Pant,8958432558
+52,7:00,AM,Nakrounda More,Harawala,Suresh Chand,7895624278
+52,7:15,AM,Harawala,Miawala,Suresh Chand,7895624278
+52,7:30,AM,Miawala,Mokampur,Suresh Chand,7895624278
+52,7:45,AM,Mokampur,Jogiwala,Suresh Chand,7895624278
+52,8:00,AM,Jogiwala,Rispana,Suresh Chand,7895624278
+52,8:15,AM,Rispana,ISBT dehradun,Suresh Chand,7895624278
+52,8:30,AM,ISBT dehradun,graphic era hill university,Suresh Chand,7895624278
+52,8:45,AM,graphic era hill university,End of Route,Suresh Chand,7895624278
+53,7:00,AM,Mokampur,Jogiwala,Saleem Khan,9837329322
+53,7:15,AM,Jogiwala,Rispana,Saleem Khan,9837329322
+53,7:30,AM,Rispana,Kargi Chowk,Saleem Khan,9837329322
+53,7:45,AM,Kargi Chowk,ISBT dehradun,Saleem Khan,9837329322
+53,8:00,AM,ISBT dehradun,graphic era hill university,Saleem Khan,9837329322
+53,8:15,AM,graphic era hill university,End of Route,Saleem Khan,9837329322
+65,7:00,AM,Mokampur,Jogiwala,Ashok Thapa,7895613200
+65,7:15,AM,Jogiwala,Rispana,Ashok Thapa,7895613200
+65,7:30,AM,Rispana,Kargi Chowk,Ashok Thapa,7895613200
+65,7:45,AM,Kargi Chowk,ISBT dehradun,Ashok Thapa,7895613200
+65,8:00,AM,ISBT dehradun,graphic era hill university,Ashok Thapa,7895613200
+65,8:15,AM,graphic era hill university,End of Route,Ashok Thapa,7895613200
+48,7:00,AM,Rispana,Kargi Chowk,Sukhbir Singh,9557902542
+48,7:15,AM,Kargi Chowk,ISBT dehradun,Sukhbir Singh,9557902542
+48,7:30,AM,ISBT dehradun,graphic era hill university,Sukhbir Singh,9557902542
+48,7:45,AM,graphic era hill university,End of Route,Sukhbir Singh,9557902542
+59,7:00,AM,Rispana,Kargi Chowk,Neeraj Tyagi,7037586656
+59,7:15,AM,Kargi Chowk,ISBT dehradun,Neeraj Tyagi,7037586656
+59,7:30,AM,ISBT dehradun,graphic era hill university,Neeraj Tyagi,7037586656
+59,7:45,AM,graphic era hill university,End of Route,Neeraj Tyagi,7037586656
+17,7:00,AM,Naya Gaon Palio,Badowala,Deepak Kumar,9953950273
+17,7:15,AM,Badowala,Telpur,Deepak Kumar,9953950273
+17,7:30,AM,Telpur,Mehuwala,Deepak Kumar,9953950273
+17,7:45,AM,Mehuwala,ISBT dehradun,Deepak Kumar,9953950273
+17,8:00,AM,ISBT dehradun,graphic era hill university,Deepak Kumar,9953950273
+17,8:15,AM,graphic era hill university,End of Route,Deepak Kumar,9953950273
+35,7:00,AM,Naya Gaon Palio,Badowala,Roop Singh Kathait,9720080026
+35,7:15,AM,Badowala,Telpur,Roop Singh Kathait,9720080026
+35,7:30,AM,Telpur,Mehuwala,Roop Singh Kathait,9720080026
+35,7:45,AM,Mehuwala,ISBT dehradun,Roop Singh Kathait,9720080026
+35,8:00,AM,ISBT dehradun,graphic era hill university,Roop Singh Kathait,9720080026
+35,8:15,AM,graphic era hill university,End of Route,Roop Singh Kathait,9720080026
+46,7:00,AM,Naya Gaon Palio,Badowala,Narender Singh,9917094040
+46,7:15,AM,Badowala,Telpur,Narender Singh,9917094040
+46,7:30,AM,Telpur,Mehuwala,Narender Singh,9917094040
+46,7:45,AM,Mehuwala,ISBT dehradun,Narender Singh,9917094040
+46,8:00,AM,ISBT dehradun,graphic era hill university,Narender Singh,9917094040
+46,8:15,AM,graphic era hill university,End of Route,Narender Singh,9917094040
+51,7:00,AM,Naya Gaon Palio,Badowala,Mohar Singh,9759767817
+51,7:15,AM,Badowala,Telpur,Mohar Singh,9759767817
+51,7:30,AM,Telpur,Mehuwala,Mohar Singh,9759767817
+51,7:45,AM,Mehuwala,ISBT dehradun,Mohar Singh,9759767817
+51,8:00,AM,ISBT dehradun,graphic era hill university,Mohar Singh,9759767817
+51,8:15,AM,graphic era hill university,End of Route,Mohar Singh,9759767817
+56,7:00,AM,Naya Gaon Palio,Badowala,Rajdeep Singh,9997455824
+56,7:15,AM,Badowala,Telpur,Rajdeep Singh,9997455824
+56,7:30,AM,Telpur,Mehuwala,Rajdeep Singh,9997455824
+56,7:45,AM,Mehuwala,ISBT dehradun,Rajdeep Singh,9997455824
+56,8:00,AM,ISBT dehradun,graphic era hill university,Rajdeep Singh,9997455824
+56,8:15,AM,graphic era hill university,End of Route,Rajdeep Singh,9997455824
+75,7:00,AM,Naya Gaon Palio,Badowala,Rakesh Singh,7830237554
+75,7:15,AM,Badowala,Telpur,Rakesh Singh,7830237554
+75,7:30,AM,Telpur,Mehuwala,Rakesh Singh,7830237554
+75,7:45,AM,Mehuwala,ISBT dehradun,Rakesh Singh,7830237554
+75,8:00,AM,ISBT dehradun,graphic era hill university,Rakesh Singh,7830237554
+75,8:15,AM,graphic era hill university,End of Route,Rakesh Singh,7830237554
+13,7:00,AM,Race Course,Dharampur,Bhanu Pratap Singh,9478178007
+13,7:15,AM,Dharampur,Mata Mandir,Bhanu Pratap Singh,9478178007
+13,7:30,AM,Mata Mandir,Kargi Chowk,Bhanu Pratap Singh,9478178007
+13,7:45,AM,Kargi Chowk,ISBT dehradun,Bhanu Pratap Singh,9478178007
+13,8:00,AM,ISBT dehradun,graphic era hill university,Bhanu Pratap Singh,9478178007
+13,8:15,AM,graphic era hill university,End of Route,Bhanu Pratap Singh,9478178007
+43,7:00,AM,Dharampur,Balbir Road,Mohan Singh,9897576124
+43,7:15,AM,Balbir Road,Fountain Chowk,Mohan Singh,9897576124
+43,7:30,AM,Fountain Chowk,Rispana,Mohan Singh,9897576124
+43,7:45,AM,Rispana,ISBT dehradun,Mohan Singh,9897576124
+43,8:00,AM,ISBT dehradun,graphic era hill university,Mohan Singh,9897576124
+43,8:15,AM,graphic era hill university,End of Route,Mohan Singh,9897576124
+63,7:00,AM,Race Course,Dharampur,Manik Chand,9760185881
+63,7:15,AM,Dharampur,Mata Mandir,Manik Chand,9760185881
+63,7:30,AM,Mata Mandir,Kargi Chowk,Manik Chand,9760185881
+63,7:45,AM,Kargi Chowk,ISBT dehradun,Manik Chand,9760185881
+63,8:00,AM,ISBT dehradun,graphic era hill university,Manik Chand,9760185881
+63,8:15,AM,graphic era hill university,End of Route,Manik Chand,9760185881
+74,6:45,AM,Rajpur,Great Value,Narayan Singh-Rajpur,9761380514
+74,7:00,AM,Great Value,Dilaram Bazar,Narayan Singh-Rajpur,9761380514
+74,7:15,AM,Dilaram Bazar,Nanni Bakery dehradun,Narayan Singh-Rajpur,9761380514
+74,7:30,AM,Nanni Bakery dehradun,Survey Chowk,Narayan Singh-Rajpur,9761380514
+74,7:45,AM,Survey Chowk,Dwarka Store,Narayan Singh-Rajpur,9761380514
+74,8:00,AM,Dwarka Store,Araghar,Narayan Singh-Rajpur,9761380514
+74,8:15,AM,Araghar,Rispana,Narayan Singh-Rajpur,9761380514
+74,8:30,AM,Rispana,Kargi Chowk,Narayan Singh-Rajpur,9761380514
+74,8:45,AM,Kargi Chowk,ISBT dehradun,Narayan Singh-Rajpur,9761380514
+74,9:00,AM,ISBT dehradun,graphic era hill university,Narayan Singh-Rajpur,9761380514
+74,9:15,AM,graphic era hill university,End of Route,Narayan Singh-Rajpur,9761380514
+80,6:45,AM,Rajpur,Great Value,Kamal Kathait,9760821022
+80,7:00,AM,Great Value,Dilaram Bazar,Kamal Kathait,9760821022
+80,7:15,AM,Dilaram Bazar,Nanni Bakery dehradun,Kamal Kathait,9760821022
+80,7:30,AM,Nanni Bakery dehradun,Survey Chowk,Kamal Kathait,9760821022
+80,7:45,AM,Survey Chowk,Dwarka Store,Kamal Kathait,9760821022
+80,8:00,AM,Dwarka Store,Araghar,Kamal Kathait,9760821022
+80,8:15,AM,Araghar,Rispana,Kamal Kathait,9760821022
+80,8:30,AM,Rispana,Kargi Chowk,Kamal Kathait,9760821022
+80,8:45,AM,Kargi Chowk,ISBT dehradun,Kamal Kathait,9760821022
+80,9:00,AM,ISBT dehradun,graphic era hill university,Kamal Kathait,9760821022
+80,9:15,AM,graphic era hill university,End of Route,Kamal Kathait,9760821022
+83,6:45,AM,Rajpur,Great Value,Amit Cheti,7895572900
+83,7:00,AM,Great Value,Dilaram Bazar,Amit Cheti,7895572900
+83,7:15,AM,Dilaram Bazar,Nanni Bakery dehradun,Amit Cheti,7895572900
+83,7:30,AM,Nanni Bakery dehradun,Survey Chowk,Amit Cheti,7895572900
+83,7:45,AM,Survey Chowk,Dwarka Store,Amit Cheti,7895572900
+83,8:00,AM,Dwarka Store,Araghar,Amit Cheti,7895572900
+83,8:15,AM,Araghar,Rispana,Amit Cheti,7895572900
+83,8:30,AM,Rispana,Kargi Chowk,Amit Cheti,7895572900
+83,8:45,AM,Kargi Chowk,ISBT dehradun,Amit Cheti,7895572900
+83,9:00,AM,ISBT dehradun,graphic era hill university,Amit Cheti,7895572900
+83,9:15,AM,graphic era hill university,End of Route,Amit Cheti,7895572900
+50,6:35,AM,Selaqui Chowk,Sudhowala,Devendra Kotiyal,8057928580
+50,6:50,AM,Sudhowala,Nanda Ki Chowki,Devendra Kotiyal,8057928580
+50,7:05,AM,Nanda Ki Chowki,Premnagar,Devendra Kotiyal,8057928580
+50,7:20,AM,Premnagar,Panditwari,Devendra Kotiyal,8057928580
+50,7:35,AM,Panditwari,Vasant Vihar,Devendra Kotiyal,8057928580
+50,7:50,AM,Vasant Vihar,Baliwala Chowk,Devendra Kotiyal,8057928580
+50,8:05,AM,Baliwala Chowk,GMS Road,Devendra Kotiyal,8057928580
+50,8:20,AM,GMS Road,graphic era hill university,Devendra Kotiyal,8057928580
+50,8:35,AM,graphic era hill university,End of Route,Devendra Kotiyal,8057928580
+71,6:35,AM,Selaqui Chowk,Sudhowala,Rai Singh,9456707877
+71,6:50,AM,Sudhowala,Nanda Ki Chowki,Rai Singh,9456707877
+71,7:05,AM,Nanda Ki Chowki,Premnagar,Rai Singh,9456707877
+71,7:20,AM,Premnagar,Panditwari,Rai Singh,9456707877
+71,7:35,AM,Panditwari,Vasant Vihar,Rai Singh,9456707877
+71,7:50,AM,Vasant Vihar,Baliwala Chowk,Rai Singh,9456707877
+71,8:05,AM,Baliwala Chowk,GMS Road,Rai Singh,9456707877
+71,8:20,AM,GMS Road,graphic era hill university,Rai Singh,9456707877
+71,8:35,AM,graphic era hill university,End of Route,Rai Singh,9456707877
+73,6:35,AM,Selaqui Chowk,Sudhowala,Pradeep Pokhriyal,9808080586
+73,6:50,AM,Sudhowala,Nanda Ki Chowki,Pradeep Pokhriyal,9808080586
+73,7:05,AM,Nanda Ki Chowki,Premnagar,Pradeep Pokhriyal,9808080586
+73,7:20,AM,Premnagar,Panditwari,Pradeep Pokhriyal,9808080586
+73,7:35,AM,Panditwari,Vasant Vihar,Pradeep Pokhriyal,9808080586
+73,7:50,AM,Vasant Vihar,Baliwala Chowk,Pradeep Pokhriyal,9808080586
+73,8:05,AM,Baliwala Chowk,GMS Road,Pradeep Pokhriyal,9808080586
+73,8:20,AM,GMS Road,graphic era hill university,Pradeep Pokhriyal,9808080586
+73,8:35,AM,graphic era hill university,End of Route,Pradeep Pokhriyal,9808080586
+78,6:35,AM,Selaqui Chowk,Sudhowala,Himanshu Rawat,8126525131
+78,6:50,AM,Sudhowala,Nanda Ki Chowki,Himanshu Rawat,8126525131
+78,7:05,AM,Nanda Ki Chowki,Premnagar,Himanshu Rawat,8126525131
+78,7:20,AM,Premnagar,Panditwari,Himanshu Rawat,8126525131
+78,7:35,AM,Panditwari,Vasant Vihar,Himanshu Rawat,8126525131
+78,7:50,AM,Vasant Vihar,Baliwala Chowk,Himanshu Rawat,8126525131
+78,8:05,AM,Baliwala Chowk,GMS Road,Himanshu Rawat,8126525131
+78,8:20,AM,GMS Road,graphic era hill university,Himanshu Rawat,8126525131
+78,8:35,AM,graphic era hill university,End of Route,Himanshu Rawat,8126525131
+37,6:35,AM,Selaqui Chowk,Sudhowala,Sunil Kumar III,6396424083
+37,6:50,AM,Sudhowala,Nanda Ki Chowki,Sunil Kumar III,6396424083
+37,7:05,AM,Nanda Ki Chowki,Premnagar,Sunil Kumar III,6396424083
+37,7:20,AM,Premnagar,Panditwari,Sunil Kumar III,6396424083
+37,7:35,AM,Panditwari,Vasant Vihar,Sunil Kumar III,6396424083
+37,7:50,AM,Vasant Vihar,Baliwala Chowk,Sunil Kumar III,6396424083
+37,8:05,AM,Baliwala Chowk,GMS Road,Sunil Kumar III,6396424083
+37,8:20,AM,GMS Road,graphic era hill university,Sunil Kumar III,6396424083
+37,8:35,AM,graphic era hill university,End of Route,Sunil Kumar III,6396424083
+79,6:35,AM,Selaqui Chowk,Sudhowala,Sunil Kumar V,9760322721
+79,6:50,AM,Sudhowala,Nanda Ki Chowki,Sunil Kumar V,9760322721
+79,7:05,AM,Nanda Ki Chowki,Premnagar,Sunil Kumar V,9760322721
+79,7:20,AM,Premnagar,Panditwari,Sunil Kumar V,9760322721
+79,7:35,AM,Panditwari,Vasant Vihar,Sunil Kumar V,9760322721
+79,7:50,AM,Vasant Vihar,Baliwala Chowk,Sunil Kumar V,9760322721
+79,8:05,AM,Baliwala Chowk,GMS Road,Sunil Kumar V,9760322721
+79,8:20,AM,GMS Road,graphic era hill university,Sunil Kumar V,9760322721
+79,8:35,AM,graphic era hill university,End of Route,Sunil Kumar V,9760322721

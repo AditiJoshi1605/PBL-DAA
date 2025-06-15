@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard- Smart Bus System</title>
+    <link rel="stylesheet" href="static/css/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+</head> 
+<body>
+    <div class="container">
+        <h2 class="text-center">Admin Dashboard</h2>
+        <div id="map" style="height:500px" class="reveal"></div>
+        <div class="table">
+            <table class="table table-bordered table-hover bg-white text-dark">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Bus ID</th>
+                        <th>Route</th>
+                        <th>Current Location</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="TableBody"></tbody>
+            </table>
+        </div>
+
+        <section class="emergency">
+            <h4>Emergency Response</h4>
+            <button class="btn btn-danger" onclick="sendEmergencyAlert()">Trigger Emergency Alert</button>
+        </section>
+    </div>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    
+    <script>
+        window.onload=()=>{
+            const map = L.map('map').setView([30.3165, 78.0322], 13);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: 'Map data © OpenStreetMap contributors'
+        }).addTo(map);
+
+        fetch('/api/running_buses')
+        .then(res=>res.json())
+        .then(buses=>{
+            const busTable=document.getElementById("TableBody");
+            buses.forEach(bus => {
+                L.marker([bus.lat, bus.lng]).addTo(map).bindPopup(`<b>${bus.id}</b><br>${bus.route}<br>Status: ${bus.status}`);
+                const row = document.createElement("tr");
+                row.innerHTML = `
+                    <td>${bus.id}</td>
+                    <td>${bus.route}</td>
+                    <td>${bus.lat.toFixed(4)}, ${bus.lng.toFixed(4)}</td>
+                    <td>${bus.status}</td>
+                `;
+            busTable.appendChild(row);
+            });
+        })
+
+        const busTable = document.getElementById("TableBody");
+        buses.forEach(bus => {
+            L.marker([bus.lat, bus.lng]).addTo(map).bindPopup(`<b>${bus.id}</b><br>${bus.route}<br>Status: ${bus.status}`);
+            const row = document.createElement("tr");
+            row.innerHTML = `
+                <td>${bus.id}</td>
+                <td>${bus.route}</td>
+                <td>${bus.lat.toFixed(4)}, ${bus.lng.toFixed(4)}</td>
+                <td>${bus.status}</td>
+            `;
+            busTable.appendChild(row);
+        });
+
+        };
+        function sendEmergencyAlert() {
+            alert("Emergency Alert Sent to All Buses!");
+        }
+        
+
+        const revealElements = document.querySelectorAll('.reveal');
+        const onScroll = () => {
+            const triggerPoint = window.innerHeight * 0.85;
+            revealElements.forEach(el => {
+                const top = el.getBoundingClientRect().top;
+                el.classList.toggle('active', top < triggerPoint);
+            });
+        };
+        window.addEventListener('scroll', onScroll);
+        onScroll();
+    </script>
+</body>
+</html>
