@@ -43,12 +43,23 @@
             const source = document.getElementById('source').value;
             const response = await fetch('/api/nearest_stop?location=' + encodeURIComponent(source));
             const data = await response.json();
+            if (data.error) {
+                alert(data.error);
+                return;
+            }
             const infoDiv = document.getElementById('nearestStop');
             infoDiv.classList.remove('d-none');
             infoDiv.innerHTML = `<strong>Nearest Stop:</strong> ${data.stop} <br><strong>Distance:</strong> ${data.distance_km.toFixed(2)} km`;
             L.marker([data.lat, data.lng]).addTo(map).bindPopup(`<b>Nearest Stop</b><br>${data.stop}`).openPopup();
             map.setView([data.lat, data.lng], 15);
         });
+        // const response = await fetch('/api/nearest_stop?location=' + encodeURIComponent(source));
+        // const data = await response.json();
+        // if (data.error) {
+        //     alert(data.error);
+        //     return;
+        // }
+
 
         const revealElements = document.querySelectorAll('.reveal');
         const onScroll = () => {

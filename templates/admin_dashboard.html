@@ -40,10 +40,22 @@
             attribution: 'Map data © OpenStreetMap contributors'
         }).addTo(map);
 
-        const buses = [
-            { id: "Bus 101", route: "Route A", lat: 30.3165, lng: 78.0322, status: "On Time" },
-            { id: "Bus 202", route: "Route B", lat: 30.3151, lng: 78.0400, status: "Delayed" }
-        ];
+        fetch('/api/running_buses')
+        .then(res=>res.json())
+        .then(buses=>{
+            const busTable=document.getElementById("TableBody");
+            buses.forEach(bus => {
+                L.marker([bus.lat, bus.lng]).addTo(map).bindPopup(`<b>${bus.id}</b><br>${bus.route}<br>Status: ${bus.status}`);
+                const row = document.createElement("tr");
+                row.innerHTML = `
+                    <td>${bus.id}</td>
+                    <td>${bus.route}</td>
+                    <td>${bus.lat.toFixed(4)}, ${bus.lng.toFixed(4)}</td>
+                    <td>${bus.status}</td>
+                `;
+            busTable.appendChild(row);
+            });
+        })
 
         const busTable = document.getElementById("TableBody");
         buses.forEach(bus => {
