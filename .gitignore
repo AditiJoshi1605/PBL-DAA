@@ -3,6 +3,7 @@
 
 # Ignore Python bytecode files
 *.pyc
+*.pyo
 __pycache__/
 
 # Ignore log files
