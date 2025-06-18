@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, jsonify,send_file
 from flask_socketio import SocketIO, emit
 import pandas as pd
 from ML_Assistance.Util_Functions.load_coordinates import load_coordinates
@@ -6,6 +6,10 @@ from ML_Assistance.Util_Functions.knn import nearest
 from ML_Assistance.Util_Functions.calculate_shortest_path import dijkstra
 from ML_Assistance.Util_Functions.create_graph_from_csv import create_graph_from_csv
 from ML_Assistance.Util_Functions.schedule import get_bus_details
+# from ML_Assistance.Util_Functions.plot_map import plot_route_map
+from ML_Assistance.Main import get_shortest_route
+import io
+import os
 
 app = Flask(__name__)
 
@@ -25,38 +29,6 @@ def student_dashboard():
 def admin_dashboard():
     return render_template("admin_dashboard.html")
 
-# @app.route('/api/nearest_stop')
-# def api_nearest_stop():
-#     from geopy.geocoders import Nominatim
-#     from geopy.extra.rate_limiter import RateLimiter
-#     from ML_Assistance.Util_Functions.haversine import haversine
-
-#     user_location = request.args.get("location")
-#     geolocator = Nominatim(user_agent="bus_locator")
-#     geocode = RateLimiter(geolocator.geocode, min_delay_seconds=1)
-    
-#     location = geocode(f"{user_location}, Dehradun, India")
-#     if not location:
-#         return jsonify({"error": "Location not found"}), 404
-    
-#     user_lat, user_lon = location.latitude, location.longitude
-
-#     # Find nearest stop using Haversine distance
-#     nearest_stop = None
-#     min_distance = float("inf")
-#     for name, loc in coord_dict.items():
-#         dist = haversine(user_lat, user_lon, loc["Latitude"], loc["Longitude"])
-#         if dist < min_distance:
-#             nearest_stop = name
-#             min_distance = dist
-
-#     result = {
-#         "stop": nearest_stop,
-#         "lat": coord_dict[nearest_stop]["Latitude"],
-#         "lng": coord_dict[nearest_stop]["Longitude"],
-#         "distance_km": min_distance
-#     }
-#     return jsonify(result)
 @app.route('/api/nearest_stops')
 def api_nearest_stops():
     from ML_Assistance.Util_Functions.knn import nearest
@@ -91,27 +63,64 @@ def api_nearest_stops():
             {"name": s[0], "lat": s[1], "lng": s[2], "distance_km": s[3]}
             for s in top_stops
         ],
-        "buses": []  # Optional: Fetch from `get_bus_details()` if needed
+        "buses": []  # to be done: Fetch from `get_bus_details()` if needed
     }
 
     return jsonify(result)
 
-# @app.route('/api/running_buses')
-# def running_buses():
-#     import os
-#     BASE_DIR = os.path.dirname(__file__)
-#     file_path = os.path.join(BASE_DIR, 'assets', 'bus_schedule.csv')
-#     df = pd.read_csv(file_path)
-#     running = []
-#     for _, row in df.iterrows():
-#         running.append({
-#             "id": row['Bus_No'],
-#             "route": row['Current_Location'] + " → " + row['Next_Stop'],
-#             "lat": coord_dict.get(row['Current_Location'].strip().lower(), {}).get("Latitude", 30.3),
-#             "lng": coord_dict.get(row['Current_Location'].strip().lower(), {}).get("Longitude", 78.0),
-#             "status": "On Route"
-#         })
-#     return jsonify(running)
+
+@app.route("/api/route")
+def api_route():
+    source = request.args.get("source")
+    destination = request.args.get("destination")
+
+    if not source or not destination:
+        return jsonify({"error": "Missing source or destination"}), 400
+
+    path, distance, error = get_shortest_route(source, destination)
+
+    if error:
+        return jsonify({"error": error}), 400
+
+    # Convert path to coordinates
+    coord_path = [
+        {
+            "name": stop,
+            "lat": coord_dict[stop]["Latitude"],
+            "lng": coord_dict[stop]["Longitude"]
+        }
+        for stop in path if stop in coord_dict
+    ]
+
+    return jsonify({
+        "path": path,
+        "coordinates": coord_path,
+        "distance_km": round(distance, 2)
+    })
+
+
+@app.route("/render_map")
+def render_map():
+    source = request.args.get("source")
+    destination = request.args.get("destination")
+
+    if not source or not destination:
+        return "Missing source or destination", 400
+
+    source = source.strip().lower()
+    destination = destination.strip().lower()
+
+    # Build graph object from distance log
+    graph = create_graph_from_csv("assets/distances_log.csv")
+
+    # Generate Folium map
+    folium_map = plot_route_map(coord_dict, graph, source, destination)
+
+    # Export Folium map to HTML
+    map_html = folium_map._repr_html_()
+
+    return map_html
+
 @app.route('/api/running_buses')
 def running_buses():
     try:
