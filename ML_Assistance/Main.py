@@ -1,10 +1,26 @@
-from Util_Functions.create_graph_from_csv import create_graph_from_csv
-from Util_Functions.load_coordinates import load_coordinates
-from Util_Functions.calculate_shortest_path import dijkstra, get_path_weight
-from Util_Functions.stop_to_destination_all_routes import find_all_routes
-from Util_Functions.plot_map import plot_route_map
-from Util_Functions.Multi_Source_Djiktras import multi_source_dijkstra,reconstruct_path
+from ML_Assistance.Util_Functions.create_graph_from_csv import create_graph_from_csv
+from ML_Assistance.Util_Functions.load_coordinates import load_coordinates
+from ML_Assistance.Util_Functions.calculate_shortest_path import dijkstra, get_path_weight
+from ML_Assistance.Util_Functions.stop_to_destination_all_routes import find_all_routes
+from ML_Assistance.Util_Functions.plot_map import plot_route_map
+from ML_Assistance.Util_Functions.Multi_Source_Djiktras import multi_source_dijkstra,reconstruct_path
 import os
+def get_shortest_route(source, destination):
+    base_path = os.path.dirname(__file__)
+    graph_file = os.path.join(base_path, '../assets/distances_log.csv')
+
+    if not os.path.exists(graph_file):
+        return None, None, f"Graph file not found: {graph_file}"
+
+    graph_obj = create_graph_from_csv(graph_file)
+
+    if source not in graph_obj.graph:
+        return None, None, f"Source '{source}' not found"
+    if destination not in graph_obj.graph:
+        return None, None, f"Destination '{destination}' not found"
+
+    path, distance = dijkstra(graph_obj, source, destination)
+    return path, distance, None 
 def display_graph(graph_obj):
     for node, edges in graph_obj.graph.items():
         connected_nodes = []
