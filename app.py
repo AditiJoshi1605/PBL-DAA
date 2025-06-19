@@ -6,7 +6,8 @@ from ML_Assistance.Util_Functions.knn import nearest
 from ML_Assistance.Util_Functions.calculate_shortest_path import dijkstra
 from ML_Assistance.Util_Functions.create_graph_from_csv import create_graph_from_csv
 from ML_Assistance.Util_Functions.schedule import get_bus_details
-# from ML_Assistance.Util_Functions.plot_map import plot_route_map
+from ML_Assistance.Util_Functions.Multi_Source_Djiktras import multi_source_dijkstra, reconstruct_path
+from ML_Assistance.Util_Functions.plot_map import plot_route_map
 from ML_Assistance.Main import get_shortest_route
 import io
 import os
@@ -71,73 +72,78 @@ def api_nearest_stops():
 
 @app.route("/api/route")
 def api_route():
-    source = request.args.get("source")
+    from ML_Assistance.Main import get_shortest_route 
+    source_param = request.args.get("source")
     destination = request.args.get("destination")
 
-    if not source or not destination:
+    if not source_param or not destination:
         return jsonify({"error": "Missing source or destination"}), 400
 
-    path, distance, error = get_shortest_route(source, destination)
+    # Handle multiple sources (comma-separated)
+    sources = [s.strip().lower() for s in source_param.split(',')]
+    destination = destination.strip().lower()
+
+    path, distance, error = get_shortest_route(sources, destination)
 
     if error:
         return jsonify({"error": error}), 400
 
     # Convert path to coordinates
-    coord_path = [
-        {
-            "name": stop,
-            "lat": coord_dict[stop]["Latitude"],
-            "lng": coord_dict[stop]["Longitude"]
-        }
-        for stop in path if stop in coord_dict
-    ]
+    coord_path = []
+    for stop in path:
+        if stop in coord_dict:
+            coord_path.append({
+                "name": stop,
+                "lat": coord_dict[stop]["Latitude"],
+                "lng": coord_dict[stop]["Longitude"]
+            })
+
+    # Fetch bus data for stops on this path
+    buses = []
+    try:
+        df = pd.read_csv("assets/bus_schedule.csv")
+        for stop in path:
+            buses_at_stop = df[df['Current_Stop'].str.lower() == stop.lower()]
+            for _, row in buses_at_stop.iterrows():
+                buses.append({
+                    'id': row['Bus_ID'],
+                    'route': row['Route'],
+                    'status': row['Status'],
+                    'stop': stop
+                })
+    except Exception as e:
+        print(f"Error loading bus data: {e}")
 
     return jsonify({
         "path": path,
         "coordinates": coord_path,
-        "distance_km": round(distance, 2)
+        "distance_km": round(distance, 2),
+        "buses": buses
     })
-
-
-@app.route("/render_map")
-def render_map():
-    source = request.args.get("source")
-    destination = request.args.get("destination")
-
-    if not source or not destination:
-        return "Missing source or destination", 400
-
-    source = source.strip().lower()
-    destination = destination.strip().lower()
-
-    # Build graph object from distance log
-    graph = create_graph_from_csv("assets/distances_log.csv")
-
-    # Generate Folium map
-    folium_map = plot_route_map(coord_dict, graph, source, destination)
-
-    # Export Folium map to HTML
-    map_html = folium_map._repr_html_()
-
-    return map_html
 
 @app.route('/api/running_buses')
 def running_buses():
     try:
-        df = pd.read_csv("assets/bus_schedule.csv")
-        running = df[df['Status'].str.lower() == 'running']
+        csv_path = os.path.join(os.path.dirname(__file__), 'assets', 'bus_schedule.csv')
+        df = pd.read_csv(csv_path)
+
         buses = []
-        for _, row in running.iterrows():
+        for _, row in df.iterrows():
             buses.append({
-                'id': row['Bus_ID'],
-                'route': row['Route'],
-                'lat': row['Latitude'],
-                'lng': row['Longitude'],
-                'status': row['Status']
+                'bus_no': row['Bus_No'],
+                'time': f"{row['Time']} {row['Arc']}",
+                'current_location': row['Current_Location'],
+                'next_stop': row['Next_Stop'],
+                'driver': row['Driver_Name'],
+                'contact': row['Contact_No']
             })
+
         return jsonify({'buses': buses})
     except Exception as e:
+        print("Error loading bus data:", e)
         return jsonify({'error': str(e)}), 500
+
+
     
 
 @app.route('/api/emergency_alert', methods=['POST'])

@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Student Dashboard - Smart Bus System</title>
-    <link rel="stylesheet" href="static/css/styles.css">
+    <!-- Correct CSS path using Flask's url_for -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 </head>
@@ -18,12 +19,12 @@
                 <div class="col-md-5">
                     <label for="source" class="form-label">Your Location</label>
                     <input type="text" id="source" name="source" class="form-control" placeholder="Enter your location">
-                    <label for="destination" class="form-label">Your destination</label>                    
+                    <label for="destination" class="form-label mt-2">Your Destination</label>
                     <input type="text" id="destination" name="destination" class="form-control" placeholder="Enter your destination">
                 </div>
                 <div class="col-md-4">
                     <label class="form-label">&nbsp;</label>
-                    <button type="submit" class="btn btn-primary w-100">Find Nearest Stop</button>
+                    <button type="submit" class="btn btn-primary w-100">Find Nearest Stops</button>
                 </div>
             </form>
         </div>
@@ -32,74 +33,135 @@
         <div id="map" class="my-4 rounded shadow reveal" style="height: 500px;"></div>
     </div>
 
-    <!-- <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
-    <script>
-        const map = L.map('map').setView([30.3165, 78.0322], 13);
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: 'Map data © OpenStreetMap contributors'
-        }).addTo(map);
-
-        document.getElementById('locationForm').addEventListener('submit', async function(e) {
-            e.preventDefault();
-            const source = document.getElementById('source').value;
-            const response = await fetch('/api/nearest_stop?location=' + encodeURIComponent(source));
-            const data = await response.json();
-            if (data.error) {
-                alert(data.error);
-                return;
-            }
-            const infoDiv = document.getElementById('nearestStop');
-            infoDiv.classList.remove('d-none');
-            infoDiv.innerHTML = `<strong>Nearest Stop:</strong> ${data.stop} <br><strong>Distance:</strong> ${data.distance_km.toFixed(2)} km`;
-            L.marker([data.lat, data.lng]).addTo(map).bindPopup(`<b>Nearest Stop</b><br>${data.stop}`).openPopup();
-            map.setView([data.lat, data.lng], 15);
-        }); -->
+    <!-- JS includes -->
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+
     <script>
-        const map = L.map('map').setView([30.3165, 78.0322], 13);
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: 'Map data © OpenStreetMap contributors'
-        }).addTo(map);
+    let map = L.map('map').setView([30.3165, 78.0322], 13);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: 'Map data © OpenStreetMap contributors'
+    }).addTo(map);
 
-        document.getElementById('locationForm').addEventListener('submit', async function(e) {
-            e.preventDefault();
-            const source = document.getElementById('source').value;
-            const destination = document.getElementById('destination').value;
-            // const destination = prompt("Enter your destination location:");
+    let selectedDestination = "";
+    let nearestMarkers = [];
+    let routePolyline;
+    let routeMarkers = [];
+    let busMarkers = [];
 
-            const response = await fetch('/api/nearest_stops?location=' + encodeURIComponent(source));
-            const data = await response.json();
+    document.getElementById('locationForm').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const source = document.getElementById('source').value.trim();
+        selectedDestination = document.getElementById('destination').value.trim();
 
-            if (data.error) {
-                alert(data.error);
-                return;
-            }
+        if (!source || !selectedDestination) {
+            alert("Please enter both source and destination.");
+            return;
+        }
 
-            const infoDiv = document.getElementById('nearestStop');
-            infoDiv.classList.remove('d-none');
+        const infoDiv = document.getElementById('nearestStop');
+        infoDiv.classList.remove('d-none');
+        infoDiv.innerHTML = `<b>Finding nearest stops...</b>`;
 
-            let html = `<strong>Your Location:</strong> ${source}<br>`;
-            html += `<strong>Nearest Stops:</strong><ul>`;
-            data.stops.forEach(stop => {
-                html += `<li>${stop.name} (${stop.distance_km.toFixed(2)} km)</li>`;
-                L.marker([stop.lat, stop.lng])
+        const stopRes = await fetch('/api/nearest_stops?location=' + encodeURIComponent(source));
+        const stopData = await stopRes.json();
+
+        if (stopData.error) {
+            alert(stopData.error);
+            return;
+        }
+
+        // Clear previous markers
+        nearestMarkers.forEach(marker => map.removeLayer(marker));
+        nearestMarkers = [];
+
+        let html = `<strong>Your Location:</strong> ${source}<br>`;
+        html += `<strong>Destination:</strong> ${selectedDestination}<br>`;
+        html += `<strong>Nearest Stops:</strong><ul>`;
+
+        stopData.stops.forEach(stop => {
+            html += `<li>${stop.name} (${stop.distance_km.toFixed(2)} km)</li>`;
+            const marker = L.marker([stop.lat, stop.lng])
                 .addTo(map)
-                .bindPopup(`<b>Stop:</b> ${stop.name}<br>Distance: ${stop.distance_km.toFixed(2)} km`)
-                .openPopup();
-            });
-         
-
-            html += `<strong>Nearby Buses:</strong><ul>`;
-            data.buses.forEach(bus => {
-                html += `<li><b>${bus.id}</b> - ${bus.route}</li>`;
-            });
-         
-            infoDiv.innerHTML = html;
+                .bindPopup(`<b>${stop.name}</b><br><button onclick="getRouteFromStop('${stop.name}')">Show Route from Here</button>`);
+            nearestMarkers.push(marker);
         });
 
-    // Animation + particles
+        html += `</ul>`;
+        infoDiv.innerHTML = html;
+    });
+
+    // Click handler for each stop
+    window.getRouteFromStop = async function(selectedStop) {
+        if (!selectedDestination) {
+            alert("Please enter a destination first.");
+            return;
+        }
+
+        const routeRes = await fetch(`/api/route?source=${encodeURIComponent(selectedStop)}&destination=${encodeURIComponent(selectedDestination)}`);
+        const routeData = await routeRes.json();
+
+        if (routeData.error) {
+            alert(routeData.error);
+            return;
+        }
+
+        // Clear previous drawings
+        if (routePolyline) map.removeLayer(routePolyline);
+        routeMarkers.forEach(m => map.removeLayer(m));
+        routeMarkers = [];
+        busMarkers.forEach(m => map.removeLayer(m));
+        busMarkers = [];
+
+        // Draw route polyline
+        if (routePolyline) map.removeLayer(routePolyline);
+        routeMarkers.forEach(m => map.removeLayer(m));
+        routeMarkers = [];
+
+        // Actual route coordinates from /api/route
+        const coords = routeData.coordinates.map(c => [c.lat, c.lng]);
+
+        routePolyline = L.polyline(coords, { color: 'blue' }).addTo(map);
+        map.fitBounds(routePolyline.getBounds());
+
+        // Mark each stop in the path
+        routeData.coordinates.forEach((coord, index) => {
+            const marker = L.marker([coord.lat, coord.lng]).addTo(map)
+                .bindPopup(`<b>${coord.name}</b><br>${index === 0 ? "Start" : index === coords.length - 1 ? "Destination" : "Stop"}`);
+            routeMarkers.push(marker);
+    });
+
+        map.fitBounds(routePolyline.getBounds());
+
+        // Add markers for route stops
+        routeData.coordinates.forEach((coord, i) => {
+            const label = i === 0 ? "Start" : (i === coords.length - 1 ? "End" : "");
+            const marker = L.marker([coord.lat, coord.lng]).addTo(map)
+                .bindPopup(`<b>${coord.name}</b> ${label}`);
+            routeMarkers.push(marker);
+        });
+
+        // Display buses running along the route
+        if (routeData.buses) {
+            routeData.buses.forEach(bus => {
+                const stop = routeData.coordinates.find(c => c.name.toLowerCase() === bus.stop.toLowerCase());
+                if (stop) {
+                    const marker = L.marker([stop.lat, stop.lng], {
+                        icon: L.icon({
+                            iconUrl: 'https://cdn-icons-png.flaticon.com/512/61/61283.png',
+                            iconSize: [24, 24]
+                        })
+                    }).addTo(map)
+                    .bindPopup(`<b>Bus:</b> ${bus.id}<br><b>Route:</b> ${bus.route}<br><b>Status:</b> ${bus.status}`);
+                    busMarkers.push(marker);
+                }
+            });
+        }
+
+        document.getElementById('nearestStop').innerHTML += `<br><b>Distance:</b> ${routeData.distance_km} km`;
+    };
+
+    // Reveal animation
     const revealElements = document.querySelectorAll('.reveal');
     const onScroll = () => {
         const triggerPoint = window.innerHeight * 0.85;
@@ -111,59 +173,6 @@
     window.addEventListener('scroll', onScroll);
     onScroll();
 
-    tsParticles.load("tsparticles", {
-        fullScreen: { enable: true, zIndex: -1 },
-        particles: {
-            number: { value: 80 },
-            color: { value: "#ffffff" },
-            shape: { type: "circle" },
-            opacity: { value: 0.2 },
-            size: { value: 3 },
-            move: { enable: true, speed: 1, outModes: { default: "out" } }
-        },
-        interactivity: {
-            events: { onHover: { enable: true, mode: "repulse" }, resize: true },
-            modes: { repulse: { distance: 100, duration: 0.4 } }
-        },
-        background: { color: "#0f2027" }
-    });
-</script>
-
-        <!-- const response = await fetch('/api/nearest_stop?location=' + encodeURIComponent(source));
-        const data = await response.json();
-        if (data.error) {
-             alert(data.error);
-             return;
-        }
-
-
-        const revealElements = document.querySelectorAll('.reveal');
-        const onScroll = () => {
-            const triggerPoint = window.innerHeight * 0.85;
-            revealElements.forEach(el => {
-                const top = el.getBoundingClientRect().top;
-                el.classList.toggle('active', top < triggerPoint);
-            });
-        };
-        window.addEventListener('scroll', onScroll);
-        onScroll();
-
-        tsParticles.load("tsparticles", {
-            fullScreen: { enable: true, zIndex: -1 },
-            particles: {
-                number: { value: 80 },
-                color: { value: "#ffffff" },
-                shape: { type: "circle" },
-                opacity: { value: 0.2 },
-                size: { value: 3 },
-                move: { enable: true, speed: 1, outModes: { default: "out" } }
-            },
-            interactivity: {
-                events: { onHover: { enable: true, mode: "repulse" }, resize: true },
-                modes: { repulse: { distance: 100, duration: 0.4 } }
-            },
-            background: { color: "#0f2027" }
-        }); -->
     </script>
 </body>
 </html>
