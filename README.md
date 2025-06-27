@@ -9,7 +9,6 @@ This Python-powered tool leverages advanced algorithms to streamline bus routing
 
 - **Smart Algorithms**: Implements cutting-edge optimization techniques to determine the most efficient bus routes.
 - **User-Friendly Interface**: Simple and intuitive command-line interface for easy interaction.
-- **Comprehensive Reporting**: Generates detailed reports to analyze and visualize route optimizations.
 
 ---
 
