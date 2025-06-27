@@ -46,11 +46,6 @@ This Python-powered tool leverages advanced algorithms to streamline bus routing
 
 ---
 
-## 📁 Project Structure
-
-- `run.py` - Main script to execute the optimizer.
-- `algos/` - Directory containing optimization algorithms.
-- `Bus Route Optimization.pdf` - Detailed documentation and methodology.
 - `.gitignore` - Specifies files to ignore in version control.
 
 ---
