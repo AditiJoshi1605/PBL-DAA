@@ -24,7 +24,7 @@ This Python-powered tool leverages advanced algorithms to streamline bus routing
 1. **Clone the repository**:
 
    ```bash
-   git clone https://github.com/AditiJoshi1605/PBL-DAA.git
+   git clone https:/github.com/AditiJoshi1605/PBL-DAA.git
    cd PBL-DAA
    python3 -m venv venv
    source venv/bin/activate
